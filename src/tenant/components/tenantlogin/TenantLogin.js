@@ -75,5 +75,10 @@ const TenantLogin = ({ onLogin }) => {
                 </div>
               )}
 
+                {/* LOGIN BUTTON */}
+                <button className="btn col-md-8 mx-auto text-center"
+                 onSubmit={handleSubmit} type="submit">Login</button>
+                 
+
 
 export default TenantLogin;
