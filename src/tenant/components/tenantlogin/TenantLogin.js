@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import logo from "../logo.svg";
-import "./TenantLogin.css";
+
 
 const TenantLogin = ({ onLogin }) => {
   const [email, setemail] = useState("");
