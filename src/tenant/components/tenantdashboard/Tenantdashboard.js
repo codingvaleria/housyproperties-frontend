@@ -1,5 +1,6 @@
 import React from "react";
 import "./Tenantdashboard.css"
+import  logo from "../../../images/logo.png"
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PaymentsSharpIcon from '@mui/icons-material/PaymentsSharp';
 import SaveAsSharpIcon from '@mui/icons-material/SaveAsSharp';
@@ -11,7 +12,8 @@ function Tenantdashboard() {
             <div className="left-container">
                 <div className='left-items'>
                     <div className='logo'>
-                        {/* <img src={logo} alt="" /> */}
+                        <img src={logo} alt="" />
+
                     </div>
                     <div className="menu">
                         <div className='dashboardicon'><DashboardIcon/> <a href="#profile">My Dashboard</a></div>
@@ -42,25 +44,27 @@ function Tenantdashboard() {
                         <div>
                             <p className='houseNumber'>Phone Number</p>
                         </div>
+
+                        <div className='houseNumber'>
+                            <p>254 </p>
                         <div>
-                            0712345678
                         </div>
                     </div>
                     <hr />
                     <div className='kyc1'>
-                        <div>
-                            <p className='houseNumber'>balance Due</p>
+                      <div className='houseNumber'>
+                            <p>balance Due</p>
                         </div>
-                        <div>
+                        <div className='houseNumber'>
                             30,000
                         </div>
                     </div>
                     <hr />
                     <div className='kyc1'>
-                        <div>
+                      <div className='houseNumber'>
                             <p className='houseNumber'>Date Due</p>
                         </div>
-                        <div>
+                        <div className='houseNumber'>
                             <input type="date" />
                         </div>
                     </div>
@@ -79,10 +83,18 @@ function Tenantdashboard() {
                     <div className="inputs" id='complains'>
                         <div className='nameInput'>
                             <input type="text"placeholder="Name" />
+                            <input type="text"placeholder="phone Number" />
                         </div>
                         <div className='houseNumberInput'>
-                            <input type="text"placeholder="House Number" />
+                            <input type="text"placeholder="House Type" />
+                            <input type="text"placeholder="Unit Type" />
                         </div>
+                        <div className='nameInput'>
+                            <input type="text"placeholder="Location" />
+                            <input type="email"placeholder="Email " />
+                        </div>
+                        
+
                     </div>
                     <textarea name="complains" id="" cols="70" rows="10"></textarea>
                     <div className="sendMessage"><button>Send Message</button></div>
@@ -100,7 +112,7 @@ function Tenantdashboard() {
                             Ksh 25,000
                         </div>
                         <div>
-                            09/01/2023
+                        11/12/30
                         </div>
                 </div>
                     <hr />
@@ -118,7 +130,7 @@ function Tenantdashboard() {
                             Ksh 25,000
                         </div>
                         <div>
-                            09/01/2023
+                              11/12/30
                         </div>
                 </div>
                     <hr />
