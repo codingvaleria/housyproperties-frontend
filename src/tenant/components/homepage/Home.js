@@ -9,7 +9,6 @@ function Home() {
   return (
     <div>
       <Navbar />
-      Home
       <Banner />
       <Housecards />
       <Footer />
