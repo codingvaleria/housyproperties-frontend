@@ -1,12 +1,13 @@
 import React from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
-function Addpropertyform() {
+
+function Complains() {
   return (
     <div>
       <AdminNavBar />
-      Addpropertyform
+      Complains
     </div>
   );
 }
 
-export default Addpropertyform;
+export default Complains;
