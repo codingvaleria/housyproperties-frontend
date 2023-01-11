@@ -78,3 +78,17 @@
     border-radius: 130px;
   }
 
+/* Form Title */
+.title {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin-left: 100px;
+    margin-right: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+  }
+
