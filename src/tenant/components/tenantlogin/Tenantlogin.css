@@ -175,3 +175,22 @@
     color: white;
   }
 
+/* Forgot Password */
+.forgot{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    position: absolute;
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .remember-sub-main{
+    margin-right: 7%;
+    margin-bottom: 10px;
+   
+  }
+
