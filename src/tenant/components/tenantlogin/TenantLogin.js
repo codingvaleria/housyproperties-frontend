@@ -78,7 +78,17 @@ const TenantLogin = ({ onLogin }) => {
                 {/* LOGIN BUTTON */}
                 <button className="btn col-md-8 mx-auto text-center"
                  onSubmit={handleSubmit} type="submit">Login</button>
-                 
+
+                 {/* FORGOT PASSWORD */}
+              <div>
+                <p className="forgot">Forgot Password? <a href='#'>Click here</a></p>
+              </div>
+            </form>
+        </div>
+      </div>
+      
+      );
+    }
 
 
 export default TenantLogin;
