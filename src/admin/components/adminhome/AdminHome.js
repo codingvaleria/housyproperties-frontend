@@ -7,7 +7,6 @@ function AdminHome() {
     <div>
       <AdminNavBar />
       <AdminBanner />
-      AdminHome
     </div>
   );
 }

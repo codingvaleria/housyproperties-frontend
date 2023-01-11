@@ -1,1 +1,98 @@
+.admin-navbar {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #122947;
+  z-index: 100;
+  position: relative;
+}
 
+.nav-logo {
+  margin-left: 40px;
+}
+
+.nav-logo img {
+  width: 65px;
+}
+
+.nav-items a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 15px;
+  position: relative;
+}
+
+.nav-items a:hover {
+  width: 100%;
+}
+
+.nav-items a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: all 0.45s;
+}
+
+.nav-items a:hover::before {
+  width: 100%;
+}
+
+.hamburger-menu {
+  display: none;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.open-icon {
+  display: block;
+  height: 35px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .nav-items {
+    position: absolute;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    background: #122947;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+  }
+
+  .open-icon {
+    display: block;
+  }
+}
+
+@media (min-width: 700px) {
+  .hidden {
+    display: block !important;
+  }
+}
