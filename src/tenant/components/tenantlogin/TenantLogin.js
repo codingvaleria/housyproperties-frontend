@@ -34,7 +34,7 @@ const TenantLogin = ({ onLogin }) => {
           <h1 className="welcome">
             Welcome to Housy Properties,<br/> home of fine living!
           </h1>
-          
+
           <div className="sub-main d-flex col-sm-4 mt-5 ms-5">
             {/* FORM DIV*/}
               <form className='form-container' id="form" onSubmit={handleSubmit}>
@@ -46,5 +46,34 @@ const TenantLogin = ({ onLogin }) => {
                 <div >
                   <h3 className="title">Tenant Login</h3>
                 </div>
+                {/* FORM INPUTS */}
+                <div className="inputs">
+                   {/* EMAIL */}
+                   <i class='bx bxs-envelope' id='icon-email'></i>
+                    <input 
+                      type="text" id="email" name="email" 
+                      placeholder="Email" value={email} className="email"
+                    />
+                </div>
+                  {/* PASSWORD */}
+                <div className="inputs">
+                  <i class='bx bxs-lock' id='icon-password'></i>
+                  <input
+                  type="password" id="password" name="password"
+                  placeholder="Password" value={password} className="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                </div>
+
+              {errors.length > 0 && (
+                <div className="input-control">
+                  <div style={{ color: "red" }}>
+                    {errors.map((error, index) => (
+                      <p key={index}>{error}</p>
+                    ))}
+                  </div>
+                </div>
+              )}
+
 
 export default TenantLogin;
