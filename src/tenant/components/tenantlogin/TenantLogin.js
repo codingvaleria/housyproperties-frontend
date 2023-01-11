@@ -38,7 +38,7 @@ const TenantLogin = ({ onLogin }) => {
             Welcome to Housy Properties,<br/> home of fine living!
           </h1>
 
-          <div className="sub-main d-flex col-sm-4 mt-5 ms-5">
+          <div className="sub-main">
             {/* FORM DIV*/}
               <form className='form-container' id="form" onSubmit={handleSubmit}>
                  {/* LOGO DIV*/}
@@ -46,15 +46,14 @@ const TenantLogin = ({ onLogin }) => {
                   <img src={logo} alt="logo" className="logo-img"></img>
                 </div>
                 {/* TITLE */}
-                <div >
-                  <h3 className="title">Tenant Login</h3>
-                </div>
+                <h4 className="title">Tenant Login</h4>
+                
                 {/* FORM INPUTS */}
                 <div className="inputs">
                    {/* EMAIL */}
                    <i class='bx bxs-envelope' id='icon-email'></i>
                     <input 
-                      type="text" id="email" name="email" 
+                      type="text" id="i-email" name="email" 
                       placeholder="Email" value={email} className="email"
                     />
                 </div>
@@ -62,7 +61,7 @@ const TenantLogin = ({ onLogin }) => {
                 <div className="inputs">
                   <i class='bx bxs-lock' id='icon-password'></i>
                   <input
-                  type="password" id="password" name="password"
+                  type="password" id="i-password" name="password"
                   placeholder="Password" value={password} className="password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
