@@ -1,5 +1,6 @@
 import React from "react";
 import "./Tenantdashboard.css"
+import  logo from "../../../images/logo.png"
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PaymentsSharpIcon from '@mui/icons-material/PaymentsSharp';
 import SaveAsSharpIcon from '@mui/icons-material/SaveAsSharp';
@@ -11,7 +12,7 @@ function Tenantdashboard() {
             <div className="left-container">
                 <div className='left-items'>
                     <div className='logo'>
-                        {/* <img src={logo} alt="" /> */}
+                        <img src={logo} alt="" />
                     </div>
                     <div className="menu">
                         <div className='dashboardicon'><DashboardIcon/> <a href="#profile">My Dashboard</a></div>
