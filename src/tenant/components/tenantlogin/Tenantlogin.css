@@ -60,3 +60,21 @@
     position: relative;
   }
 
+/* Logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    margin-left: 120px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    
+  }
+  
+  .logo-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 130px;
+  }
+
