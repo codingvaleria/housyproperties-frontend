@@ -1,0 +1,19 @@
+/* Body */
+.body {
+    background-image: url('https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    padding-top: 70px;
+    height: 150vh;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 600px) {
+    .body {
+      background-size: cover;
+    }
+  }
+
