@@ -194,3 +194,12 @@
    
   }
 
+
+  @media (max-width: 600px) {
+    /* styles for small devices go here */
+  }
+  @media (min-width: 768px) {
+    /* styles for larger devices go here */
+  }
+  
+  
