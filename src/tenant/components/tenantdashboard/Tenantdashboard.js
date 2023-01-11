@@ -13,6 +13,7 @@ function Tenantdashboard() {
                 <div className='left-items'>
                     <div className='logo'>
                         <img src={logo} alt="" />
+
                     </div>
                     <div className="menu">
                         <div className='dashboardicon'><DashboardIcon/> <a href="#profile">My Dashboard</a></div>
@@ -43,13 +44,15 @@ function Tenantdashboard() {
                         <div>
                             <p className='houseNumber'>Phone Number</p>
                         </div>
+
                         <div className='houseNumber'>
                             <p>254 </p>
+                        <div>
                         </div>
                     </div>
                     <hr />
                     <div className='kyc1'>
-                        <div className='houseNumber'>
+                      <div className='houseNumber'>
                             <p>balance Due</p>
                         </div>
                         <div className='houseNumber'>
@@ -58,7 +61,7 @@ function Tenantdashboard() {
                     </div>
                     <hr />
                     <div className='kyc1'>
-                        <div className='houseNumber'>
+                      <div className='houseNumber'>
                             <p className='houseNumber'>Date Due</p>
                         </div>
                         <div className='houseNumber'>
@@ -91,6 +94,7 @@ function Tenantdashboard() {
                             <input type="email"placeholder="Email " />
                         </div>
                         
+
                     </div>
                     <textarea name="complains" id="" cols="70" rows="10"></textarea>
                     <div className="sendMessage"><button>Send Message</button></div>
@@ -126,7 +130,7 @@ function Tenantdashboard() {
                             Ksh 25,000
                         </div>
                         <div>
-                        11/12/30
+                              11/12/30
                         </div>
                 </div>
                     <hr />
