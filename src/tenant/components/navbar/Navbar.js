@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-// import logo from "../../tenant/images/logo.png";
+import logo from "../../../images/logo.png";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
@@ -11,7 +11,9 @@ function Navbar() {
   };
   return (
     <div className="navbar">
-      <span className="nav-logo">{/* <img src={logo} alt="logo" /> */}</span>
+      <span className="nav-logo">
+        <img src={logo} alt="logo" />
+      </span>
       <button className="hamburger-menu" onClick={handleShowNavbar}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
