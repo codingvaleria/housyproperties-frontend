@@ -30,3 +30,24 @@
    
   }
 
+/* Welcome */
+.welcome{
+    display: block;
+    z-index: 1;
+    color: white;
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    margin-left: 450px;
+    margin-right: 0px;
+    margin-top: 10%;
+    
+  }
+  
+  @media (max-width: 768px) {
+    .welcome {
+      width: 70%;
+    }
+  }
+
