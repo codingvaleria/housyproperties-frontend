@@ -28,6 +28,11 @@ const TenantLogin = ({ onLogin }) => {
       });
   };
 
- 
+  return (
+    <div className="body">
+         {/* WELCOME TEXT*/}
+          <h1 className="welcome">
+            Welcome to Housy Properties,<br/> home of fine living!
+          </h1>
 
 export default TenantLogin;
