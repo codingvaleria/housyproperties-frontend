@@ -34,5 +34,17 @@ const TenantLogin = ({ onLogin }) => {
           <h1 className="welcome">
             Welcome to Housy Properties,<br/> home of fine living!
           </h1>
+          
+          <div className="sub-main d-flex col-sm-4 mt-5 ms-5">
+            {/* FORM DIV*/}
+              <form className='form-container' id="form" onSubmit={handleSubmit}>
+                 {/* LOGO DIV*/}
+                <div className="logo-container">
+                  <img src={logo} alt="logo" className="logo-img"></img>
+                </div>
+                {/* TITLE */}
+                <div >
+                  <h3 className="title">Tenant Login</h3>
+                </div>
 
 export default TenantLogin;
