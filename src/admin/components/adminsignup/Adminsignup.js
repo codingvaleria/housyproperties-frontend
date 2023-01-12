@@ -70,7 +70,7 @@ function Adminsignup({ onLogin }) {
           </div>
 
           <div className="second-input-a">
-            <img /*src={envelope_icon} alt="email" className="icon"*/ />
+          <i class="icon fa fa-envelope" aria-hidden="true"></i>
 
             <input
               type="text"
@@ -84,7 +84,7 @@ function Adminsignup({ onLogin }) {
           </div>
 
           <div className="second-inpu-b">
-            <img /*src={address_icon} alt="address" className="icon" *//>
+          <i class="fa fa-address-book" aria-hidden="true"></i>
 
             <input
               type="text"
@@ -98,7 +98,7 @@ function Adminsignup({ onLogin }) {
           </div>
 
           <div className="second-input-c">
-            <img /* src={key_icon} alt="key" className="icon" *//>
+          <i class="fa fa-key" aria-hidden="true"></i>
 
             <input
               type="password"
@@ -112,7 +112,7 @@ function Adminsignup({ onLogin }) {
           </div>
 
           <div className="second-input-d">
-          <i /*class="fa fa-user" aria-hidden="true"*/></i>
+          <i class="fa fa-user" aria-hidden="true"></i>
 
             <input
               type="password"
