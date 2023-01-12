@@ -18,3 +18,12 @@ td, th {
     text-align: center;
 }
 
+ /* Add a grey background to the table header */
+ th {
+    background-color: #dddddd;
+    font-weight: bold;
+    padding: 12px;
+ 
+}
+
+
