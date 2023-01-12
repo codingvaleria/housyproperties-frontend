@@ -34,7 +34,18 @@ const Viewproperty = () => {
             <th className="column-action">Action</th>
           </tr>
         </thead>
-        
+        <tbody>
+          {data.map((row, index) => (
+            <tr key={index} className="property-table-row">
+              <td>{row.name}</td>
+              <td>
+                <img className="p-img" src={logo} alt={row.name} width="100" />
+              </td>
+              <td>{row.type}</td>
+              <td>{row.unit_type}</td>
+              <td>{row.location}</td>
+              <td>{row.amount}</td>
+              <td></td>
     </div>
   );
 }
