@@ -20,7 +20,9 @@ const Viewproperty = () => {
   return (
     <div>
       <AdminNavBar />
-      Viewproperty
+      <div className="property-table-container">
+      <div className="property-table-title">Property Table</div>
+      
     </div>
   );
 }
