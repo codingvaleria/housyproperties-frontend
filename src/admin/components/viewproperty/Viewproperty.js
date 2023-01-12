@@ -45,7 +45,10 @@ const Viewproperty = () => {
               <td>{row.unit_type}</td>
               <td>{row.location}</td>
               <td>{row.amount}</td>
-              <td></td>
+              <td>
+                <button className="p-edit-button" onClick={() => handleEdit(index)}>Edit</button>
+                <button className="p-delete-button" onClick={() => handleDelete(index)}>Delete</button>
+              </td>
     </div>
   );
 }
