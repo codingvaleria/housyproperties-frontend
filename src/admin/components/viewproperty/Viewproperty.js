@@ -49,6 +49,11 @@ const Viewproperty = () => {
                 <button className="p-edit-button" onClick={() => handleEdit(index)}>Edit</button>
                 <button className="p-delete-button" onClick={() => handleDelete(index)}>Delete</button>
               </td>
+              </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     </div>
   );
 }
