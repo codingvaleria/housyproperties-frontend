@@ -1,10 +1,6 @@
 import React from "react";
 import "./Tenantdashboard.css";
 import logo from "../../../images/logo.png";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import PaymentsSharpIcon from "@mui/icons-material/PaymentsSharp";
-import SaveAsSharpIcon from "@mui/icons-material/SaveAsSharp";
-import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
 function Tenantdashboard() {
   return (
@@ -16,17 +12,15 @@ function Tenantdashboard() {
           </div>
           <div className="menu">
             <div className="dashboardicon">
-              <DashboardIcon /> <a href="#profile">My Dashboard</a>
+              <a href="#profile">My Dashboard</a>
             </div>
             <div className="dashboardicon">
-              <PaymentsSharpIcon /> <a href="#transactions">Payments</a>
+              <a href="#transactions">Payments</a>
             </div>
             <div className="dashboardicon">
-              <SaveAsSharpIcon /> <a href="#complains">Complains</a>
+              <a href="#complains">Complains</a>
             </div>
-            <div className="dashboardicon">
-              <LogoutRoundedIcon /> Logout
-            </div>
+            <div className="dashboardicon">Logout</div>
           </div>
         </div>
       </div>
@@ -163,6 +157,7 @@ function Tenantdashboard() {
           <br />
           <br />
         </div>
+        npm
       </div>
     </div>
   );
