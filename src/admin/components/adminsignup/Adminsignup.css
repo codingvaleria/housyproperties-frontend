@@ -6,20 +6,21 @@
   padding-top: 90px;
 }
 
-.formfield-a {
+.form-field {
   display: flex;
   align-items: center;
-  height: 700px;
+  height: 650px;
   width: 450px;
   justify-content: center;
   border-radius: 25px;
   background-color: #d9d9d9;
 }
 
-.logo {
+.logo-a {
   padding-bottom: 20px;
   justify-content: center;
   display: flex;
+  padding-right: 120px;
 }
 
 .logo-container {
@@ -39,45 +40,30 @@
   bottom: 60px;
 }
 
-.title {
+.title-a {
   color: #122947;
 }
 
-.icon {
-  height: 20px;
-  width: 20px;
+.form-c {
+  left: 1.5rem;
+  padding-left: 3rem;
+}
+
+.ico {
   position: absolute;
-  padding: 12px 0 0 16px;
-  opacity: 50%;
+  top: calc(35%);
+  left: 1.25rem;
+  z-index: 100;
+  color: gray;
 }
 
-.user {
-padding-left: 50px;
-font-size: medium;
+.input-e {
+  position: relative;
 }
 
-input {
-  height: 40px;
-  width: 200px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-}
-
-.second-input-a {
-  padding: 30px;
-}
-
-.second-input-c {
-  padding: 30px;
-}
-
-.second-input- {
-  padding: 30px;
-}
-
-.login-a {
-  padding: 30px;
+.input-e .form-c {
+  left: 1.5rem;
+  padding-left: 3rem;
 }
 
 button {

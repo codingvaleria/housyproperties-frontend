@@ -3,7 +3,6 @@ import "./Adminsignup.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
 
-
 function Adminsignup({ onLogin }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -43,20 +42,20 @@ function Adminsignup({ onLogin }) {
 
   return (
     <div className="main-a">
-      <div className="formfield-a">
+      <div className="form-field">
         <form id="form" onSubmit={handleSubmit}>
-          <div className="logo">
+          <div className="logo-a">
             <div className="logo-container">
               <img src={logo} alt="logo" className="logo-img"></img>
             </div>
           </div>
 
-          <div className="title">
+          <div className="title-a">
             <h1>Admin Sign-Up</h1>
           </div>
 
-          <div>
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <div className="input-e">
+            <i class="ico fa fa-user" aria-hidden="true"></i>
 
             <input
               type="text"
@@ -64,13 +63,13 @@ function Adminsignup({ onLogin }) {
               name="username"
               placeholder="Name"
               value={username}
-              className="user"
+              className="form-c"
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 
-          <div className="second-input-a">
-          <i class="icon fa fa-envelope" aria-hidden="true"></i>
+          <div className="input-e">
+            <i class="ico fa fa-envelope" aria-hidden="true"></i>
 
             <input
               type="text"
@@ -78,13 +77,13 @@ function Adminsignup({ onLogin }) {
               name="email"
               placeholder="Email"
               value={email}
-              className="user"
+              className="form-c"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
-          <div className="second-inpu-b">
-          <i class="fa fa-address-book" aria-hidden="true"></i>
+          <div className="input-e">
+            <i class="ico fa fa-address-book" aria-hidden="true"></i>
 
             <input
               type="text"
@@ -92,13 +91,13 @@ function Adminsignup({ onLogin }) {
               name="address"
               placeholder="Address"
               value={address}
-              className="user"
+              className="form-c"
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
 
-          <div className="second-input-c">
-          <i class="fa fa-key" aria-hidden="true"></i>
+          <div className="input-e">
+            <i class="ico fa fa-key" aria-hidden="true"></i>
 
             <input
               type="password"
@@ -106,27 +105,27 @@ function Adminsignup({ onLogin }) {
               name="password"
               placeholder="Password"
               value={password}
-              className="user"
+              className="form-c"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
-          <div className="second-input-d">
-          <i class="fa fa-user" aria-hidden="true"></i>
+          <div className="input-e">
+            <i class="ico fa fa-key" aria-hidden="true"></i>
 
             <input
               type="password"
-              id="password-c"
+              id="password"
               name="confirm-password"
               placeholder="Confirm Password"
               value={passwordConfirmation}
-              className="user"
+              className="form-c"
               onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
           </div>
 
           {errors.length > 0 && (
-            <div className="input-control">
+            <div className="input-d">
               <div style={{ color: "red" }}>
                 {errors.map((error, index) => (
                   <p key={index}>{error}</p>
