@@ -43,32 +43,32 @@ function Adminlogin(onLogin) {
               <img src={logo} alt="logo" className="logo-img"></img>
             </div>
           </div>
-          <div >
+          <div className="title-a">
             <h1>Admin Login</h1>
           </div>
 
           <div>
-          <i class="icon fa fa-user" aria-hidden="true"></i>
+          <i class="icon-user fa fa-user" aria-hidden="true"></i>
             <input
               type="text"
               id="username"
               name="username"
               placeholder="Username"
               value={username}
-              className="user"
+              className="user-a"
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 
           <div>
-          <i class="icon fa fa-key" aria-hidden="true"></i>
+          <i class="icon-key fa fa-key" aria-hidden="true"></i>
             <input
               type="password"
               id="password"
               name="password"
               placeholder="Password"
               value={password}
-              className="user"
+              className="user-a"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>

@@ -41,28 +41,40 @@
     top: 60px;
     bottom: 60px;
   }
+
+  .title-a {
+    color: #122947;
+    padding: 30px;
+  }
   
-  .user {
+  .user-a {
     padding-left: 50px;
-    font-size: medium;
+    font-size: small;
   }
   
-  .icon {
+  .icon-user {
   position: absolute;
-  padding-top: 110px;
-  padding-left: 450px;
+  padding-top: 25px;
+  padding-left: 20px;
+  color: gray;
   }
+
+  .icon-key {
+    position: absolute;
+    padding-top: 25px;
+    padding-left: 20px;
+    color: gray;
+    }
   
   input {
     height: 50px;
-    width: 10px;
-    border-radius: 10px;
+    border-radius: 25px;
     border: none;
     outline: none;
   }
   
   .second-input {
-    padding: 30px;
+    padding-top: 30px;
   }
   
   button {
