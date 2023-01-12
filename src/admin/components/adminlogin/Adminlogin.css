@@ -1,0 +1,80 @@
+.main {
+   /* background-image: url(../../../images/AdminLogin.jpg);*/
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 90px;
+  }
+  
+  .formfield {
+    display: flex;
+    align-items: center;
+    height: 550px;
+    width: 450px;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: #d9d9d9;
+  }
+  
+  .logo {
+    padding-bottom: 20px;
+    justify-content: center;
+    display: flex;
+    padding-right: 120px;
+  }
+  
+  .logo-container {
+    border-radius: 150px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 115px;
+    width: 115px;
+  }
+  
+  .logo-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 130px;
+    top: 60px;
+    bottom: 60px;
+  }
+  
+  .user {
+    padding-left: 500px;
+    font-size: medium;
+  }
+  
+  .icon {
+  position: absolute;
+  padding-top: 110px;
+  padding-left: 450px;
+  }
+  
+  input {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  .second-input {
+    padding: 30px;
+  }
+  
+  button {
+    height: 50px;
+    width: 150px;
+    background-color: #122947;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+  }
