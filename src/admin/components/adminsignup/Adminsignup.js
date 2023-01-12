@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
 
 
-function AdminSignUp({ onLogin }) {
+function Adminsignup({ onLogin }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -56,7 +56,7 @@ function AdminSignUp({ onLogin }) {
           </div>
 
           <div>
-          <i /*class="fa fa-user" aria-hidden="true"*/></i>
+          <i class="fa fa-user" aria-hidden="true"></i>
 
             <input
               type="text"
@@ -145,4 +145,4 @@ function AdminSignUp({ onLogin }) {
     </div>
   );
 }
-export default AdminSignUp;
+export default Adminsignup;

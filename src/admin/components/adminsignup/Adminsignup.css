@@ -1,95 +1,95 @@
 .main-a {
-    height: 100vh;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    padding-top: 90px;
-  }
-  
-  .formfield-a {
-    display: flex;
-    align-items: center;
-    height: 700px;
-    width: 450px;
-    justify-content: center;
-    border-radius: 25px;
-    background-color: #d9d9d9;
-  }
-  
-  .logo {
-    padding-bottom: 20px;
-    justify-content: center;
-    display: flex;
-  }
-  
-  .logo-container {
-    border-radius: 150px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: 115px;
-    width: 115px;
-  }
-  
-  .logo-img {
-    height: 100px;
-    width: 100px;
-    border-radius: 130px;
-    top: 60px;
-    bottom: 60px;
-  }
-  
-  .title {
-    color: #122947;
-  }
-  
-  .icon {
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    padding: 12px 0 0 16px;
-    opacity: 50%;
-  }
-  
-  .user {
-  padding-left: 50px;
-  font-size: medium;
-  }
-  
-  input {
-    height: 40px;
-    width: 200px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-  }
-  
-  .second-input-a {
-    padding: 30px;
-  }
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 90px;
+}
 
-  .second-input-c {
-    padding: 30px;
-  }
+.formfield-a {
+  display: flex;
+  align-items: center;
+  height: 700px;
+  width: 450px;
+  justify-content: center;
+  border-radius: 25px;
+  background-color: #d9d9d9;
+}
 
-  .second-input- {
-    padding: 30px;
-  }
+.logo {
+  padding-bottom: 20px;
+  justify-content: center;
+  display: flex;
+}
 
-  .login-a {
-    padding: 30px;
-  }
-  
-  button {
-    height: 50px;
-    width: 150px;
-    background-color: #122947;
-    font-size: 30px;
-    color: #fff;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-  }
+.logo-container {
+  border-radius: 150px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 115px;
+  width: 115px;
+}
+
+.logo-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 130px;
+  top: 60px;
+  bottom: 60px;
+}
+
+.title {
+  color: #122947;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  padding: 12px 0 0 16px;
+  opacity: 50%;
+}
+
+.user {
+padding-left: 50px;
+font-size: medium;
+}
+
+input {
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.second-input-a {
+  padding: 30px;
+}
+
+.second-input-c {
+  padding: 30px;
+}
+
+.second-input- {
+  padding: 30px;
+}
+
+.login-a {
+  padding: 30px;
+}
+
+button {
+  height: 50px;
+  width: 150px;
+  background-color: #122947;
+  font-size: 30px;
+  color: #fff;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
