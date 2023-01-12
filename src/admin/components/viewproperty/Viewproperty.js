@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import  logo from "../../../images/logo.png"
+import "./Viewproperty.css"
+import propertiesData from "./propertiesData";
 import AdminBanner from "../adminhome/AdminBanner";
 import AdminNavBar from "../adminhome/AdminNavbar";
 
