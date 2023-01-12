@@ -34,9 +34,9 @@ function Adminlogin(onLogin) {
 
   return (
     <div className="main">
-      <div className="formfield">
+      <div className="form-field">
         <form id="form" onSubmit={handleSubmit}>
-          <div className="logo">
+          <div className="logo-a">
             <div className="logo-container">
               <img src={logo} alt="logo" className="logo-img"></img>
             </div>
@@ -44,10 +44,10 @@ function Adminlogin(onLogin) {
           <div className="title-a">
             <h1>Admin Login</h1>
           </div>
-          <div className="input-field">
+          <div className="input-f">
             <i class="ico fa fa-user" aria-hidden="true"></i>
             <input
-              className="form-control"
+              className="form-c"
               type="text"
               value={username}
               placeholder="Username"
@@ -56,10 +56,10 @@ function Adminlogin(onLogin) {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className="input-field">
+          <div className="input-f">
             <i class="ico fa fa-key" aria-hidden="true"></i>
             <input
-              className="form-control"
+              className="form-c"
               type="password"
               value={password}
               placeholder="Password"

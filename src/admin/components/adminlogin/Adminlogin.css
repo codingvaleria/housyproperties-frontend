@@ -8,7 +8,7 @@
   padding-top: 90px;
 }
 
-.formfield {
+.form-field {
   display: flex;
   align-items: center;
   height: 550px;
@@ -59,12 +59,13 @@
   color:gray; 
 }
 
-input {
-  height: 50px;
-  width: 10px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
+.input-f {
+  position: relative;
+}
+
+.input-f .form-c {
+  left: 1.5rem;
+  padding-left: 3rem;
 }
 
 .second-input {
