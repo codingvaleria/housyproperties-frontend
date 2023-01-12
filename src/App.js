@@ -22,7 +22,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/signin" element={<TenantLogin />} />
           <Route path="/mydashboard" element={<Tenantdashboard />} />
-          <Route path="/admin/" element={<AdminHome />} />
+          <Route path="/admin" element={<AdminHome />} />
           <Route path="/admin/signup" element={<Adminsignup />} />
           <Route path="/admin/login" element={<Adminlogin />} />
           <Route path="/admin/tenantsignup" element={<Tenantsignupform />} />
