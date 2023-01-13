@@ -4,8 +4,10 @@ import apartments from "../../../images/apartments.png";
 import family from "../../../images/family.png";
 import villa from "../../../images/villa.png";
 import Search from "./Search";
+import { useNavigate } from "react-router-dom";
 
 function Banner() {
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <div className="banner-container">
@@ -21,6 +23,16 @@ function Banner() {
           <img src={family} alt="family" />
           <img src={apartments} alt="apartments" />
           <img src={villa} alt="villa" />
+        </div>
+        <div className="properties-element">
+          <h1>Our Properties</h1>
+          <p
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
+            Become a Tenant
+          </p>
         </div>
       </div>
     </React.Fragment>
