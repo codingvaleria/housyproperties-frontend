@@ -14,9 +14,10 @@ function Complains() {
         <th>Phone No</th>
         <th>House Type</th>
         <th>Unit Type</th>
-        <th>location</th>
-        <th>complain</th>
+        <th>Location</th>
+        <th>Complain</th>
         <th>Action</th>
+        <th>Status</th>
         <tr>
           <td>James</td>
           <td>12</td>
@@ -31,6 +32,12 @@ function Complains() {
           </td>
           <td className="delete">
             <i class="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
           </td>
         </tr>
         <tr>
@@ -47,6 +54,12 @@ function Complains() {
           </td>
           <td className="delete">
             <i className="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
           </td>
         </tr>
         <tr>
@@ -65,6 +78,12 @@ function Complains() {
           <td className="delete">
             <i className="fa fa-trash" aria-hidden="true"></i>
           </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>Duncan</td>
@@ -80,6 +99,12 @@ function Complains() {
           </td>
           <td className="delete">
             <i className="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
           </td>
         </tr>
         <tr>
@@ -97,6 +122,12 @@ function Complains() {
           <td className="delete">
             <i className="fa fa-trash" aria-hidden="true"></i>
           </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>Michael</td>
@@ -111,6 +142,12 @@ function Complains() {
           </td>
           <td className="delete">
             <i className="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
           </td>
         </tr>
       </table>
