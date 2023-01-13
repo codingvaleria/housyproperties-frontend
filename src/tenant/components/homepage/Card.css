@@ -1,147 +1,115 @@
-.MainHeader {
-  width: 60%;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 0px;
-  align-items: center;
+.houses h4 {
+  color: black;
+  padding: 15px;
+  padding-left: 25px;
 }
+
+.houses h6 {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1500px;
+}
+
 .card {
-  width: 405px;
-  object-fit: contain;
   margin: 20px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
   transition: transform 100ms ease-in;
   cursor: pointer;
+  width: 30%;
 }
+
 .card:hover {
   transform: scale(1.07);
 }
 
-.icon {
-  height: 100px;
+.hse-image {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.card > img {
-  background-position: center;
-  object-fit: cover;
-  height: 230px;
-  width: 400px;
-  border-radius: 10px;
-  overflow: hidden;
-}
 .cardInfo {
   justify-content: space-around;
-  width: 400px;
   margin-top: 0%;
-  height: 220px;
-  border: 1;
 }
+
+.estate {
+  color: grey;
+  text-transform: Capitalize;
+  margin-top: 0;
+  margin-left: 0px;
+  font-size: 15px;
+  padding: 10px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+}
+
 .infoSections {
-  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.estate {
-  color: #6d737a;
-  margin-top: 0%;
-}
+
 .infoicons {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 20px;
+  margin: 0px;
   font-size: larger;
 }
 
-.section1 {
-  justify-content: space-around;
+.section1,
+.section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-button {
+
+.symbol {
+  padding: 10px;
+  padding-left: 0px;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.price-button {
   color: white;
   border: none;
+  margin: 0px;
+  margin-top: 15px;
   background: #122947;
   border-radius: 8px;
   padding: 10px 20px;
   align-items: center;
   text-align: center;
-  margin-bottom: 5px;
 }
 
-h4 {
-  margin-top: 0%;
-}
-@media screen and (max-width: 640px) {
-  .MainHeader {
-    object-fit: cover;
-    width: 90%;
-    align-items: center;
-    justify-content: space-around;
-    margin-left: 0%;
-  }
+@media screen and (max-width: 1200px) {
   .card {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
-    transition: transform 100ms ease-in;
-    cursor: pointer;
-    align-items: center;
-    text-align: center;
-    height: 60vh;
+    width: 40%;
   }
+}
 
-  .card > img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .cardInfo {
-    width: 100%;
-    margin-top: 0%;
-    margin-top: 0%;
-    border: 1;
-    justify-content: space-around;
-  }
-  .section1 {
-    justify-content: space-around;
-  }
-  button {
-    align-items: center;
-    text-align: center;
-    color: white;
-    border: none;
-    background: #122947;
-    border-radius: 8px;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  .infoicons {
-    display: flex;
-    align-items: center;
-  }
-}
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 700px) {
   .card {
-    width: 90%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
-    transition: transform 100ms ease-in;
-    cursor: pointer;
-    align-items: center;
-    text-align: start;
-  }
-  .infoicons {
-    display: flex;
-    align-items: center;
-  }
-  .card > img {
-    width: 100%;
-    height: 250px;
-    border-radius: 10px;
-    overflow: hidden;
+    width: 80%;
   }
 }

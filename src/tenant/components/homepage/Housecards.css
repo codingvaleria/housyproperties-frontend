@@ -1,14 +1,4 @@
-.houseSections{
-    display: flex;
-}
-@media screen and (max-width: 768px) {
-    .houseSections{
-        display: flex;
-        flex-direction: column;
-    }
-}
-@media screen and (max-width: 912px) {
-    .houseSections{
-        display: flex;
-    }
+.houses {
+  display: flex;
+  justify-content: center;
 }
