@@ -30,6 +30,7 @@
   
   #btn{
     color: #122947;
+    background-color: #fff;
     border-radius: 10px;
     display: block;
     float: right;
@@ -40,6 +41,8 @@
   #overlay{
     display: flex;
     flex-direction: column;
+    padding: 90px;
+   
   }
   
   

@@ -18,15 +18,15 @@
   }
   
   .about_text img{
-    height: 500px;
+    height: 550px;
     width: 800px;
   }
   
   .about_text p{
-    font-size: 35px;
+    font-size: 25px;
     box-sizing: border-box;
     background-color:whitesmoke;
-    height: 500px;
+    height: 550px;
     
   }
   
