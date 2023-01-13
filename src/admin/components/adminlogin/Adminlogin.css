@@ -1,4 +1,4 @@
-.main {
+.l-main {
   background-image: url(../../../images/AdminLogin.jpg);
   background-size: cover;
   height: 100vh;
@@ -6,26 +6,28 @@
   justify-content: center;
   display: flex;
   padding-top: 90px;
+  width: 100%;
 }
 
-.form-field {
+.l-field {
   display: flex;
   align-items: center;
   height: 550px;
-  width: 450px;
+  width: 400px;
   justify-content: center;
   border-radius: 25px;
   background-color: #d9d9d9;
 }
 
-.logo-a {
-  padding-bottom: 20px;
+.l-logo {
+  padding-top: 10px;
   justify-content: center;
   display: flex;
-  padding-right: 120px;
+  margin: 30px;
+  
 }
 
-.logo-container {
+.logo-c {
   border-radius: 150px;
   align-items: center;
   justify-content: center;
@@ -42,7 +44,7 @@
   bottom: 60px;
 }
 
-.title-a {
+.l-title {
   color: #122947;
 }
 
@@ -51,7 +53,7 @@
   padding-left: 3rem;
 }
 
-.ico {
+.l-icon {
   position: absolute;
   top: calc(35%);
   left: 1.25rem;
@@ -61,18 +63,17 @@
 
 .input-f {
   position: relative;
+  margin: 25px;
+  width: 250px;
 }
 
 .input-f .form-c {
   left: 1.5rem;
   padding-left: 3rem;
+  font-size: medium;
 }
 
-.second-input {
-  padding: 30px;
-}
-
-button {
+.l-button {
   height: 50px;
   width: 150px;
   background-color: #122947;
@@ -84,4 +85,5 @@ button {
   font-weight: bold;
   align-items: center;
   justify-content: center;
+  margin: 25px;
 }
