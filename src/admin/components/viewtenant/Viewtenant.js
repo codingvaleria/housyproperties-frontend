@@ -25,5 +25,33 @@ function Viewtenant() {
                     <tr key={index} className="tenant-table-row">
                         {state.editingIndex === index ?
                         (
+                          <>
+                                <td>
+                                    <input value={row.name} onChange={e => handleChange(e, index, "name")} />
+                                </td>
+                                <td>
+                                    <input value={row.hse_num} onChange={e => handleChange(e, index, "hse_num")} />
+                                </td>
+                                <td>
+                                    <input value={row.phone} onChange={e => handleChange(e, index, "phone")} />
+                                </td>
+                                <td>
+                                    <input value={row.hse_type} onChange={e => handleChange(e, index, "hse_type")} />
+                                </td>
+                                <td>
+                                    <input value={row.unit_type} onChange={e => handleChange(e, index, "unit_type")} />
+                                </td>
+                                <td>
+                                    <input value={row.date_in} onChange={e => handleChange(e, index, "date_in")} />
+                                </td>
+                                <td>
+                                    <input value={row.balance} onChange={e => handleChange(e, index, "balance")} />
+                                </td>
+                                <td>
+                                    <button className="p-edit-button" onClick={() => handleSave()}>Save</button>
+                                    <button className="p-delete-button" onClick={() => handleCancel()}>Cancel</button>
+                                </td>
+                            </>
+                        ) : (  
 
 export default Viewtenant;
