@@ -20,5 +20,10 @@ function Viewtenant() {
                 <th className="column-action">Action</th>
               </tr>
             </thead>
+            <tbody>
+                {state.data.map((row, index) => (
+                    <tr key={index} className="tenant-table-row">
+                        {state.editingIndex === index ?
+                        (
 
 export default Viewtenant;
