@@ -42,6 +42,11 @@ const Viewproperty = () => {
   //       .then(data => setState({ ...state, data }))
   //       .catch(error => console.error(error));
   //   }, []);
+
+  const handleEdit = (index) => {
+    setState({...state, editingIndex: index});
+  }
+
   
 
   return (
