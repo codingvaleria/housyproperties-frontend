@@ -8,20 +8,42 @@ import AdminBanner from "../adminhome/AdminBanner";
 import AdminNavBar from "../adminhome/AdminNavbar";
 
 const Viewproperty = () => {
-  const [data, setData] = useState(propertiesData);
-
-  const handleDelete = (index) => {
-    const updatedData = [...data];
-    updatedData.splice(index, 1);
-    setData(updatedData);
+  const initialState = {
+    data: propertiesData,
+    editingIndex: -1,
+    newProperties: {
+      name: "",
+      type: "",
+      unit_type: "",
+      location: "",
+      amount: ""
+    }
   }
+  
+  const [state, setState] = useState(initialState);
 
-  const handleEdit = (index) => {
-    const updatedData = [...data];
-    updatedData[index].name = "Edited";
-    // make changes to the specific item in updatedData 
-    setData(updatedData);
-}
+// FOR API CONSUMPTION
+  // const Viewproperty = () => {
+  //   const [state, setState] = useState({
+  //     data: [],
+  //     editingIndex: -1,
+  //     newProperties: {
+  //       name: "",
+  //       type: "",
+  //       unit_type: "",
+  //       location: "",
+  //       amount: ""
+  //     }
+  //   });
+  
+  //   useEffect(() => {
+  //     fetch('https://your-api-endpoint.com/properties')
+  //       .then(response => response.json())
+  //       .then(data => setState({ ...state, data }))
+  //       .catch(error => console.error(error));
+  //   }, []);
+  
+
   return (
     <div>
       <AdminNavBar />
