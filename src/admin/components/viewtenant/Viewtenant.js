@@ -23,6 +23,27 @@ const Viewtenant = () => {
 }
 
 const [state, setState] = useState(initialState);
+
+ // FOR API CONSUMPTION
+  // const PropertyTable = () => {
+  //   const [state, setState] = useState({
+  //     data: [],
+  //     editingIndex: -1,
+  //     newProperties: {
+  //       name: "",
+  //       type: "",
+  //       unit_type: "",
+  //       location: "",
+  //       amount: ""
+  //     }
+  //   });
+  
+  //   useEffect(() => {
+  //     fetch('https://your-api-endpoint.com/properties')
+  //       .then(response => response.json())
+  //       .then(data => setState({ ...state, data }))
+  //       .catch(error => console.error(error));
+  //   }, []);
   
 const handleEdit = (index) => {
   setState({...state, editingIndex: index});
