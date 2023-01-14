@@ -121,6 +121,19 @@ const Viewproperty = () => {
                   </td>
                 </>
               ) : (
-                
+                <>
+                  <td>{row.name}</td>
+                  <td>
+                    <img className="p-img" src={logo} alt={row.name} width="100" />
+                  </td>
+                  <td>{row.type}</td>
+                  <td>{row.unit_type}</td>
+                  <td>{row.location}</td>
+                  <td>{row.amount}</td>
+                  <td>
+                    <button className="p-edit-button" onClick={() => handleEdit(index)}>Edit</button>
+                    <button className="p-delete-button" onClick={() => handleDelete(index)}>Delete</button>
+                  </td>
+                </>
 
 export default Viewproperty;
