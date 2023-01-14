@@ -1,12 +1,14 @@
 import React from "react";
 import "./Tenantsignupform.css";
+import AdminNavBar from "../adminhome/AdminNavbar";
 
 export default function Tenantsignup() {
   return (
     <div className="form-wrapper">
+      <AdminNavBar />
       <form className="upload-form">
         <div className="title">Tenant Sign up Form </div>
-        <div className="form">
+        <div className="tenant-form">
           <div className="input-field">
             <i class="icon fa fa-user" aria-hidden="true"></i>
             <input
