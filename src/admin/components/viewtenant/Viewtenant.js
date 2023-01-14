@@ -53,5 +53,18 @@ function Viewtenant() {
                                 </td>
                             </>
                         ) : (  
+                          <>
+                                <td>{row.name}</td>
+                                <td>{row.hse_num}</td>
+                                <td>{row.phone}</td>
+                                <td>{row.hse_type}</td>
+                                <td>{row.unit_type}</td>
+                                <td>{row.date_in}</td>
+                                <td>{row.balance}</td>
+                                <td>
+                                    <button className="p-edit-button" onClick={() => handleEdit(index)}>Edit</button>
+                                    <button className="p-delete-button" onClick={() => handleDelete(index)}>Delete</button>
+                                </td>
+                            </>
 
 export default Viewtenant;
