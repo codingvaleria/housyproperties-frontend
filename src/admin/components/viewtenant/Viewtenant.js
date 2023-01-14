@@ -1,5 +1,8 @@
 import React from "react";
+import { useState } from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
+// import React, { useState, useEffect } from 'react'; FOR API CONSUMPTION
+import tenantData from "./tenantData";
 import "./Viewtenant.css";
 
 
