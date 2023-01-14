@@ -52,6 +52,13 @@ const Viewproperty = () => {
     updatedData[index][field] = e.target.value;
     setState({...state, data: updatedData});
   }
+
+  const handleSave = () => {
+    const confirmSave = window.confirm("Are you sure you want to save the changes?");
+    if (confirmSave) {
+      setState({...state, editingIndex: -1});
+    }
+  }
   
 
   return (
