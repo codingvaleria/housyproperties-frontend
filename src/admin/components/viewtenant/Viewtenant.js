@@ -38,6 +38,10 @@ const handleSave = () => {
   }
 }
 
+const handleCancel = () => {
+  setState({...state, editingIndex: -1});
+}
+
 
 
   return (
