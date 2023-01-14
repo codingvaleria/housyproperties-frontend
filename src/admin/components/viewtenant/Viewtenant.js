@@ -1,7 +1,26 @@
 import React from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
 import "./Viewtenant.css";
-function Viewtenant() {
+
+
+const Viewtenant = () => {
+  const initialState = {
+    data: tenantData,
+    editingIndex: -1,
+    newTenant: {
+        name: "",
+        hse_num: "",
+        phone: "",
+        hse_type: "",
+        unit_type: "",
+        date_in: "",
+        balance: "",
+        action: ""
+    }
+}
+  
+
+
   return (
     <div>
       <AdminNavBar />
@@ -66,5 +85,6 @@ function Viewtenant() {
                                     <button className="p-delete-button" onClick={() => handleDelete(index)}>Delete</button>
                                 </td>
                             </>
+                              
 
 export default Viewtenant;
