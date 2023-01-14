@@ -64,8 +64,16 @@ const Viewproperty = () => {
     setState({...state, editingIndex: -1});
   }
 
-  
+  const handleDelete = (index) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this property?");
+    if (confirmDelete) {
+      const updatedData = [...state.data];
+      updatedData.splice(index, 1);
+      setState({...state, data: updatedData});
+    }
+  }
 
+  
   return (
     <div>
       <AdminNavBar />
