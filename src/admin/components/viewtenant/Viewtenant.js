@@ -18,8 +18,9 @@ const Viewtenant = () => {
         action: ""
     }
 }
-  
 
+const [state, setState] = useState(initialState);
+  
 
   return (
     <div>
