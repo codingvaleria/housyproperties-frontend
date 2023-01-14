@@ -3,6 +3,7 @@ import { useState } from "react";
 import  logo from "../../../images/logo.png"
 import "./Viewproperty.css"
 import propertiesData from "./propertiesData";
+// import React, { useState, useEffect } from 'react'; FOR API CONSUMPTION
 import AdminBanner from "../adminhome/AdminBanner";
 import AdminNavBar from "../adminhome/AdminNavbar";
 
