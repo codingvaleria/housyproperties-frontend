@@ -43,7 +43,7 @@ function Adminsignup({ onLogin }) {
   return (
     <div className="main-a">
       <div className="form-field">
-        <form id="form" onSubmit={handleSubmit}>
+        <form id="s-form" onSubmit={handleSubmit}>
           <div className="logo-a">
             <div className="logo-container">
               <img src={logo} alt="logo" className="logo-img"></img>
@@ -134,8 +134,8 @@ function Adminsignup({ onLogin }) {
             </div>
           )}
 
-          <div className="login-a">
-            <button onSubmit={handleSubmit} type="submit">
+          <div className="signup">
+            <button className="s-button" onSubmit={handleSubmit} type="submit">
               Sign Up
             </button>
           </div>

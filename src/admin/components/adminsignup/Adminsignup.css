@@ -20,7 +20,7 @@
   padding-bottom: 20px;
   justify-content: center;
   display: flex;
-  padding-right: 120px;
+  padding-right: 10px;
 }
 
 .logo-container {
@@ -66,11 +66,11 @@
   padding-left: 3rem;
 }
 
-button {
+.s-button {
   height: 50px;
   width: 150px;
   background-color: #122947;
-  font-size: 30px;
+  font-size: 25px;
   color: #fff;
   border-radius: 15px;
   border: none;
