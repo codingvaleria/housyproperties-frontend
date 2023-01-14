@@ -18,7 +18,7 @@ function Adminsignup({ onLogin }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/adminsignup", {
+    fetch("/admin/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ function Adminsignup({ onLogin }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-        navigate(`/adminlogin`);
+        navigate(`/admin/login`);
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -42,7 +42,7 @@ function Adminsignup({ onLogin }) {
 
   return (
     <div className="main-a">
-      <div className="form-field">
+      <div className="submain-a">
         <form id="s-form" onSubmit={handleSubmit}>
           <div className="logo-a">
             <div className="logo-container">
