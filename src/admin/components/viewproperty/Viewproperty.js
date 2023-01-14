@@ -96,24 +96,31 @@ const Viewproperty = () => {
             <tr key={index} className="property-table-row">
               {state.editingIndex === index ?
              (
-              <td>
-                <img className="p-img" src={logo} alt={row.name} width="100" />
-              </td>
-              <td>{row.type}</td>
-              <td>{row.unit_type}</td>
-              <td>{row.location}</td>
-              <td>{row.amount}</td>
-              <td>
-                <button className="p-edit-button" onClick={() => handleEdit(index)}>Edit</button>
-                <button className="p-delete-button" onClick={() => handleDelete(index)}>Delete</button>
-              </td>
-              </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-    </div>
-  );
-}
+              <>
+                  <td>
+                    <input value={row.name} onChange={e => handleChange(e, index, "name")} />
+                  </td>
+                  <td>
+                    <img className="p-img" src={logo} alt={row.name} width="100" />
+                  </td>
+                  <td>
+                    <input value={row.type} onChange={e => handleChange(e, index, "type")} />
+                  </td>
+                  <td>
+                    <input value={row.unit_type} onChange={e => handleChange(e, index, "unit_type")} />
+                  </td>
+                  <td>
+                    <input value={row.location} onChange={e => handleChange(e, index, "location")} />
+                  </td>
+                  <td>
+                    <input value={row.amount} onChange={e => handleChange(e, index, "amount")} />
+                  </td>
+                  <td>
+                    <button className="p-edit-button" onClick={() => handleSave(index)}>Save</button>
+                    <button className="p-delete-button" onClick={() => handleCancel(index)}>Cancel</button>
+                  </td>
+                </>
+              ) : (
+                
 
 export default Viewproperty;
