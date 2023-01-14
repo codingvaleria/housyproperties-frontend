@@ -135,5 +135,15 @@ const Viewproperty = () => {
                     <button className="p-delete-button" onClick={() => handleDelete(index)}>Delete</button>
                   </td>
                 </>
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+    </div>
+  );
+};
+
 
 export default Viewproperty;
