@@ -25,6 +25,12 @@ const handleEdit = (index) => {
   setState({...state, editingIndex: index});
 }
 
+const handleChange = (e, index, field) => {
+  const updatedData = [...state.data];
+  updatedData[index][field] = e.target.value;
+  setState({...state, data: updatedData});
+}
+
 
   return (
     <div>
