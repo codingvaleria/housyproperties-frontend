@@ -1,7 +1,7 @@
-/* * {
+.tenant-main {
   background-color: #f5f5f5;
 }
-.container {
+.tenant-container {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -18,9 +18,9 @@
 .right-container {
   width: 100%;
 }
-img {
-  width: 160px;
-  height: 150px;
+.logo img {
+  width: 110px;
+  height: 110px;
 }
 .logo {
   margin-top: 20px;
@@ -69,13 +69,19 @@ img {
 .houseNumber {
   font-size: larger;
 }
+
+.houseNumber-d {
+  font-size: larger;
+  padding-left: 50px;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 5%;
 }
-button {
+.t-button {
   background: #122947;
   color: white;
   border-radius: 10px;
@@ -83,13 +89,14 @@ button {
   cursor: pointer;
   padding: 5px 15px;
 }
+
 .inputs {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 5%;
 }
-input {
+.t-input {
   border: 1px solid black;
   padding: 10px 20px;
   border-radius: 10px;
@@ -168,4 +175,4 @@ a {
   .paymentHistory {
     margin-bottom: 10px;
   }
-} */
+}
