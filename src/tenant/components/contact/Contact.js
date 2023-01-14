@@ -17,7 +17,7 @@ function Contact() {
                             placeholder="Your Email"
                             id="email"
                             />
-                            <input type="Number" 
+                            <input type="text" 
                             placeholder="Phone No:"   
                             minLength={10}
                             id="phone"
