@@ -21,6 +21,10 @@ const Viewtenant = () => {
 
 const [state, setState] = useState(initialState);
   
+const handleEdit = (index) => {
+  setState({...state, editingIndex: index});
+}
+
 
   return (
     <div>
