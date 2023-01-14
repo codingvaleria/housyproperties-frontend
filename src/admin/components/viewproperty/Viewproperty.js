@@ -92,9 +92,10 @@ const Viewproperty = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((row, index) => (
+        {state.data.map((row, index) => (
             <tr key={index} className="property-table-row">
-              <td>{row.name}</td>
+              {state.editingIndex === index ?
+             (
               <td>
                 <img className="p-img" src={logo} alt={row.name} width="100" />
               </td>
