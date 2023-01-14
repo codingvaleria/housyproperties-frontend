@@ -59,6 +59,11 @@ const Viewproperty = () => {
       setState({...state, editingIndex: -1});
     }
   }
+
+  const handleCancel = () => {
+    setState({...state, editingIndex: -1});
+  }
+
   
 
   return (
