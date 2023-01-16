@@ -5,12 +5,11 @@ import logo from "../../../images/logo.png";
 
 
 function Tenantdashboard() {
-  const [name, setName] = useState("");
-  const [phoneNo, setPhoneNo] = useState("");
-  const [houseType, setHouseType] = useState("");
-  const [unitType, setUnitType] = useState("");
-  const [location, setLocation] = useState("");
-  const [message, setMessage] = useState("");
+  const [Name, setName] = useState("");
+  const [Phone, setPhoneNo] = useState("");
+  const [Email, setEmail] = useState("");
+  const [HouseType, setHouseType] = useState("");
+  const [complain, setComplain] = useState("");
 
   const navigate = useNavigate();
   const navigateToSignIn = () =>{
@@ -19,18 +18,17 @@ function Tenantdashboard() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("", {
+    fetch("https://housy-properties-production.up.railway.app/housecomplains", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: name,
-        phoneNo: phoneNo,
-        houseType: houseType,
-        unitType: unitType,
-        location: location,
-        message: message,
+        Name: Name,
+        Phone: Phone,
+        Email: Email,
+        HouseType: HouseType,
+        complain: complain,
       }),
     })
     .then(r=>{
@@ -131,7 +129,7 @@ function Tenantdashboard() {
                   className="t-input" 
                   type="text" 
                   placeholder="Name" 
-                  value={name}
+                  value={Name}
                   onChange={(e)=>setName(e.target.value)}
                   />
                 
@@ -139,41 +137,35 @@ function Tenantdashboard() {
                     className="t-input"
                     type="text"
                     placeholder="Phone Number"
-                    value={phoneNo}
+                    value={Phone}
                     onChange={(e)=>setPhoneNo(e.target.value)}
                   />
                 </div>
+                <div className="nameInput">
+                    <input 
+                    className="t-input" 
+                    type="text" 
+                    placeholder="Email" 
+                    value={Email}
+                    onChange={(e)=>setEmail(e.target.value)}/>
+                  </div>
                     <div className="houseNumberInput">
                       <input
                      
                         className="t-input"
                         type="text"
                         placeholder="House Type"
-                        value={houseType}
+                        value={HouseType}
                         onChange={(e)=>setHouseType(e.target.value)}
                       />
-                      <input
-                        className="t-input"
-                        type="text"
-                        placeholder="Unit Type"
-                        value={unitType}
-                        onChange={(e)=>setUnitType(e.target.value)}
-                      /> 
                       </div>
-                  <div className="nameInput">
-                    <input 
-                    className="t-input" 
-                    type="text" 
-                    placeholder="Location" 
-                    value={location}
-                    onChange={(e)=>setLocation(e.target.value)}/>
-                  </div>
+                 
                 </div>
                    <textarea 
                    name="complains" id="" 
                    cols="70" rows="10"
-                   value={message}
-                   onChange={(e)=>setMessage(e.target.value)}
+                   value={complain}
+                   onChange={(e)=>setComplain(e.target.value)}
                  >
                   
                  </textarea>
