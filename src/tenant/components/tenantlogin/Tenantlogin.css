@@ -1,197 +1,104 @@
 /* Body */
-.tenant-login-body {
+.tenant-signin {
   background-image: url("https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 2;
   padding-top: 70px;
-  height: 900px;
+  height: 150vh;
+  overflow: hidden;
+}
+
+.tenant-signin-inner {
   display: flex;
-  flex-direction: row;
-  background-position-x: center;
-  justify-content: space-evenly;
-  background-color: #d9d9d9;
-}
-
-/* Welcome */
-.welcome {
-  display: flex;
+  padding: 10px;
+  max-width: 1400px;
   margin: auto;
-  /* margin-left: -50px; */
-  /* margin-left: 40px; */
-  /* display: block;
-  z-index: 1;
-  color: white;
-  position: absolute;
-  text-align: center;
-  font-size: 60px;
-  font-weight: 900;
-  margin-left: 450px;
-  margin-top: 2%; */
-}
-
-/* .welcome h1 {
-  color: #fff;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 40px;
-  margin: auto;
-} */
-
-/* Sub main */
-.sub-main {
-  display: flex;
-  justify-content: center;
-  /* height: 450px; */
-  /* width: 40%; */
-  /* max-width: 700px; */
-  height: 600px;
-  border-radius: 15px;
-  background-color: rgb(212, 204, 204);
-  border-radius: 15px;
-  margin-top: 10px;
-  margin-left: 20px;
-  /*box-shadow: 1px 12px 12px 12px rgba(224, 224, 142, 0.75);*/
-  /* padding-bottom: 50px; */
-
-  /* margin-left: 30px; */
-}
-
-/* @media (max-width: 768px) {
-  .welcome {
-    width: 70%;
-  }
-} */
-
-/* Form */
-.form-container {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 500px;
-
-  /* justify-content: center;
-  padding-top: 10%;
-  position: relative; */
-}
-
-/* Logo */
-.logo-container {
-  display: flex;
-  justify-content: center;
-  /* height: 100px;
-  width: 100px; */
-  margin: auto;
-  padding-top: 20px;
-}
-
-.logo-img {
-  height: 100px;
-  width: 100px;
-  border-radius: 130px;
-  justify-content: center;
-}
-
-/* Form Title */
-.tenant-login-title {
-  /* text-align: center;
-  justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
-  color: rgb(0, 0, 0);
-  margin-top: 20px; */
-  display: flex;
-  margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.tenant-login-title h4 {
-  margin: auto;
-  font-size: 20px;
-}
-
-/* Inputs */
-.inputs {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
-}
-
-
-.email {
-  text-align: center;
-}
-
-.password {
-  text-align: center;
-}
-
-/* Email Icon */
-#icon-email {
-  padding-right: 100px;
-  padding-left: 80px;
-  font-size: 25px;
-  position: absolute;
-  opacity: 50%;
-}
-
-/* Password Icon */
-#icon-password {
-  padding-right: 100px;
-  padding-bottom: 2px;
-  padding-left: 80px;
-  font-size: 25px;
-  position: absolute;
-  opacity: 50%;
-}
-
-/* Login Button */
-.btn {
-  padding: 7px 7px;
-  border-width: 2px;
-  border-radius: 9px;
-  align-items: center;
-  justify-content: center;
-  color: aliceblue;
-  background-color: rgb(0, 0, 63);
-  width: 30%;
-  font-weight: 700;
-  margin-top: 10px;
-  margin: auto;
-}
-
-.btn:hover {
-  background-color: rgb(163, 187, 157);
-  color: white;
-}
-
-/* Forgot Password */
-/* .forgot {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 400;
-  color: rgb(0, 0, 0);
-  align-items: center;
-  position: absolute;
-  margin-left: 70px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-} */
-
-.remember-sub-main {
-  margin-right: 7%;
-  margin-bottom: 10px;
+  justify-content: space-between;
 }
 
 @media (max-width: 600px) {
-  /* styles for small devices go here */
-}
-@media (min-width: 768px) {
-  /* styles for larger devices go here */
-}
-
-/* @media (max-width: 600px) {
-  .body {
+  .tenant-signin {
     background-size: cover;
   }
-} */
+}
+
+.tenant-signin .welcome {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  flex: 1;
+  margin-top: 80px;
+  font-style: italic;
+}
+
+.tenant-signin form {
+  background-color: #d9d9d9;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.tenant-signin .sub-main {
+  flex: 1;
+}
+
+.tenant-signin .title {
+  text-transform: none;
+}
+
+.tenant-signin .logo-container {
+  width: 100%;
+}
+
+.tenant-signin .logo-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.tenant-signin .btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.tenant-signin .inputs {
+  position: relative;
+}
+
+.tenant-signin input {
+  padding-left: 40px !important;
+  box-shadow: #0000001a 0px 10px 10px 0px;
+}
+
+.tenant-signin .bx {
+  position: absolute;
+  left: 16px;
+  top: 24px;
+  font-size: 20px;
+}
+
+.tenant-signin .forgot-password {
+  margin: 30px 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .tenant-signin {
+    flex-direction: column-reverse;
+  }
+  .tenant-signin .welcome {
+    display: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex: 0;
+  }
+  .tenant-signin form {
+    margin-top: 20px;
+  }
+}

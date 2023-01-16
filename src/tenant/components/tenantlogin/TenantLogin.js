@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import logo from "../../../images/logo.png";
 import "./Tenantlogin.css";
-import Navbar from "../navbar/Navbar";
 
 const TenantLogin = ({ onLogin }) => {
   const [email, setemail] = useState("");
@@ -32,9 +31,8 @@ const TenantLogin = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      <Navbar />
-      <div className="tenant-login-body">
+    <div className="tenant-signin">
+      <div className="tenant-signin-inner">
         <div className="sub-main">
           {/* FORM DIV*/}
           <form className="form-container" id="form" onSubmit={handleSubmit}>
@@ -43,9 +41,7 @@ const TenantLogin = ({ onLogin }) => {
               <img src={logo} alt="logo" className="logo-img"></img>
             </div>
             {/* TITLE */}
-            <div className="tenant-login-title">
-              <h4>Tenant Login</h4>
-            </div>
+            <h4 className="title">Tenant Login</h4>
 
             {/* FORM INPUTS */}
             <div className="inputs">
@@ -73,6 +69,7 @@ const TenantLogin = ({ onLogin }) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+
             {errors.length > 0 && (
               <div className="input-control">
                 <div style={{ color: "red" }}>
@@ -82,6 +79,7 @@ const TenantLogin = ({ onLogin }) => {
                 </div>
               </div>
             )}
+
             {/* LOGIN BUTTON */}
             <button
               className="btn col-md-8 mx-auto text-center"
@@ -90,16 +88,20 @@ const TenantLogin = ({ onLogin }) => {
             >
               Login
             </button>
+
             {/* FORGOT PASSWORD */}
-            <p>
-              Forgot Password? <a href="#">Click here</a>
-            </p>
+            <div className="forgot-password">
+              <p className="forgot">
+                Forgot Password? <a href="#">Click here</a>
+              </p>
+            </div>
           </form>
         </div>
-        <div className="welcome">
-          {/* WELCOME TEXT*/}
-          <h1>Welcome to Housy Properties,home of fine living!</h1>
-        </div>
+        {/* WELCOME TEXT*/}
+        <h1 className="welcome">
+          Welcome to Housy Properties,
+          <br /> Home of Fine Living!
+        </h1>
       </div>
     </div>
   );
