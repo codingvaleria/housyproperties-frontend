@@ -1,13 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
 import "./Addpropertyform.css";
+import { useNavigate } from "react-router-dom";
 
-function Addpropertyform() {
+function Addpropertyform({ property, setProperty }) {
+  const [formData, setFormData] = useState({
+    propertyName: "",
+    propertyType: "",
+    unitType: "",
+    location: "",
+    image: "",
+    amount: 0,
+  });
+
+  const navigate = useNavigate();
+
+  function handleChange(e) {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  function handleSubmit(e) {
+    console.log(formData);
+    e.preventDefault();
+    fetch("http://localhost:3000/properties", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setProperty([...property, data]);
+        navigate("/admin/viewproperty");
+      });
+  }
+
   return (
     <div>
       <AdminNavBar />
       <div className="form-wrapper">
-        <form className="upload-form">
+        <form className="upload-form" onSubmit={handleSubmit}>
           <div className="title">Add Property Form </div>
           <div className="property-form">
             <div className="input-field">
@@ -18,6 +54,7 @@ function Addpropertyform() {
                 placeholder="Property Name"
                 id="Property Name"
                 name="Property Name"
+                onChange={handleChange}
               />
             </div>
             <div className="input-field">
@@ -51,6 +88,7 @@ function Addpropertyform() {
                 placeholder="Location"
                 id="Location"
                 name="Location"
+                onChange={handleChange}
               />
             </div>
             <div className="input-field">
@@ -61,6 +99,7 @@ function Addpropertyform() {
                 placeholder="Image"
                 id="Image"
                 name="Image"
+                onChange={handleChange}
               />
             </div>
             <div className="input-field">
@@ -71,6 +110,7 @@ function Addpropertyform() {
                 placeholder="Amount"
                 id="Amount"
                 name="Amount"
+                onChange={handleChange}
               />
             </div>
             <div className="facilities-wrapper">
@@ -82,6 +122,7 @@ function Addpropertyform() {
                   type="checkbox"
                   id="Wifi"
                   name="Wifi"
+                  onChange={handleChange}
                 />
               </div>
               <div className="check-field">
@@ -91,6 +132,7 @@ function Addpropertyform() {
                   type="checkbox"
                   id="Shower"
                   name="Shower"
+                  onChange={handleChange}
                 />
               </div>
               <div className="check-field">
@@ -100,6 +142,7 @@ function Addpropertyform() {
                   type="checkbox"
                   id="Balcony"
                   name="Balcony"
+                  onChange={handleChange}
                 />
               </div>
               <div className="check-field">
@@ -109,12 +152,13 @@ function Addpropertyform() {
                   type="checkbox"
                   id="Parking"
                   name="Parking"
+                  onChange={handleChange}
                 />
               </div>
             </div>
 
             <div className="submit-wrapper">
-              <input type="submit" value="Add Property"></input>
+              <input type="submit" value="Add Property" onSubmit={handleSubmit}></input>
             </div>
           </div>
         </form>
