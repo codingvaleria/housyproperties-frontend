@@ -1,12 +1,11 @@
-.main-a {
+.admin-signup-main-a {
   height: 100vh;
   text-align: center;
   justify-content: center;
   display: flex;
   padding-top: 90px;
 }
-
-.form-field {
+.admin-sign-up-submain-a {
   display: flex;
   align-items: center;
   height: 650px;
@@ -15,15 +14,13 @@
   border-radius: 25px;
   background-color: #d9d9d9;
 }
-
-.logo-a {
+.admin-signup-logo-a {
   padding-bottom: 20px;
   justify-content: center;
   display: flex;
-  padding-right: 120px;
 }
 
-.logo-container {
+.admin-signup-logo-container {
   border-radius: 150px;
   align-items: center;
   justify-content: center;
@@ -31,24 +28,20 @@
   height: 115px;
   width: 115px;
 }
-
-.logo-img {
+.admin-signup-logo-img {
   height: 100px;
   width: 100px;
   border-radius: 130px;
   top: 60px;
   bottom: 60px;
 }
-
-.title-a {
+.title-aa {
   color: #122947;
 }
-
 .form-c {
   left: 1.5rem;
   padding-left: 3rem;
 }
-
 .ico {
   position: absolute;
   top: calc(35%);
@@ -56,21 +49,19 @@
   z-index: 100;
   color: gray;
 }
-
 .input-e {
   position: relative;
+  margin: 20px;
 }
-
 .input-e .form-c {
   left: 1.5rem;
   padding-left: 3rem;
 }
-
-button {
+.s-button {
   height: 50px;
   width: 150px;
   background-color: #122947;
-  font-size: 30px;
+  font-size: 25px;
   color: #fff;
   border-radius: 15px;
   border: none;
@@ -78,4 +69,5 @@ button {
   font-weight: bold;
   align-items: center;
   justify-content: center;
+  margin: 20px;
 }
