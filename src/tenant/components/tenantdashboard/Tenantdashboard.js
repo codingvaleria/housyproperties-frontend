@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Tenantdashboard.css";
 import logo from "../../../images/logo.png";
 
+
 function Tenantdashboard() {
+  const [name, setName] = useState("");
+  const [phoneNo, setPhoneNo] = useState("");
+  const [houseType, setHouseType] = useState("");
+  const [unitType, setUnitType] = useState("");
+  const [location, setLocation] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        phoneNo: phoneNo,
+        houseType: houseType,
+        unitType: unitType,
+        location: location,
+        message: message,
+      }),
+    })
+  
+  }
+
+
   return (
     <div className="tenant-main">
       <div className="tenant-container">
@@ -85,35 +113,65 @@ function Tenantdashboard() {
             <hr />
             <hr />
             <h2 id="complains">Make Complains</h2>
+          <form onSubmit={handleSubmit}>
             <div className="inputs" id="complains">
-              <div className="nameInput">
-                <input className="t-input" type="text" placeholder="Name" />
-                <input
-                  className="t-input"
-                  type="text"
-                  placeholder="Phone Number"
-                />
-              </div>
-              <div className="houseNumberInput">
-                <input
-                  className="t-input"
-                  type="text"
-                  placeholder="House Type"
-                />
-                <input
-                  className="t-input"
-                  type="text"
-                  placeholder="Unit Type"
-                />
-              </div>
-              <div className="nameInput">
-                <input className="t-input" type="text" placeholder="Location" />
-              </div>
-            </div>
-            <textarea name="complains" id="" cols="70" rows="10"></textarea>
-            <div className="sendMessage">
-              <button className="t-button">Send Message</button>
-            </div>
+                <div className="nameInput">
+                  <input 
+                  className="t-input" 
+                  type="text" 
+                  placeholder="Name" 
+                  value={name}
+                  onChange={(e)=>setName(e.target.value)}
+                  />
+                
+                  <input
+                    className="t-input"
+                    type="text"
+                    placeholder="Phone Number"
+                    value={phoneNo}
+                    onChange={(e)=>setPhoneNo(e.target.value)}
+                  />
+                </div>
+                    <div className="houseNumberInput">
+                      <input
+                     
+                        className="t-input"
+                        type="text"
+                        placeholder="House Type"
+                        value={houseType}
+                        onChange={(e)=>setHouseType(e.target.value)}
+                      />
+                      <input
+                        className="t-input"
+                        type="text"
+                        placeholder="Unit Type"
+                        value={unitType}
+                        onChange={(e)=>setUnitType(e.target.value)}
+                      /> 
+                      </div>
+                  <div className="nameInput">
+                    <input 
+                    className="t-input" 
+                    type="text" 
+                    placeholder="Location" 
+                    value={location}
+                    onChange={(e)=>setLocation(e.target.value)}/>
+                  </div>
+                </div>
+                   <textarea 
+                   name="complains" id="" 
+                   cols="70" rows="10"
+                   value={message}
+                   onChange={(e)=>setMessage(e.target.value)}
+                 >
+                  
+                 </textarea>
+                <div className="sendMessage">
+      
+                   <button className="t-button">Send Message</button>
+            
+                </div>
+            </form>
           </div>
           <hr />
           <hr />
