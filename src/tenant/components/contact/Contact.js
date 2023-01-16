@@ -12,7 +12,7 @@ function Contact() {
   const navigate = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("", {
+    fetch("https://housy-properties-production.up.railway.app/contacts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
