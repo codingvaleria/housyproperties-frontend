@@ -1,40 +1,77 @@
-
-th{
-    padding: 10px 20px;
-    background-color:grey ;
-    justify-content: space-around;
-}
-.tittle{
-    position: sticky;
-    align-items: center;
+/* Add a title for the table */
+.tenant-table-title {
+    font-size: 24px;
+    margin-bottom: 16px;
     text-align: center;
-}
-table{
-    width: 90%;
-    justify-content: space-around;
-    border: 1px solid grey;
+  }
+  
+  /* Style the table */
+  table {
+    width: 100%;
     border-collapse: collapse;
-    align-items: center;
+  }
+  
+   /* Style the table cells */
+   td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
     text-align: center;
-    height: 50vh;
-    margin-left: 5%;
-    margin-top: 2%;
-}
-td{
-    align-items: center;
+  }
+  
+    /* Add a grey background to the table header */
+    th {
+      background-color: #dddddd;
+      font-weight: bold;
+      padding: 12px;
+   
+    }
+  
+    /* Style the image */
+  .p-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 130px;
+  }
+  
+  /* Style the Delete button */
+  .p-delete-button {
+    background-color: #bd1f13;
+    border: none;
+    color: white;
+    padding: 1px 16px;
     text-align: center;
-    border: 1px solid grey;
-}
-.edit{
-    padding: 10px 20px;
-}
-@media screen and(max-width: 768px) {
-    table{
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  /* Style the Edit button */
+  .p-edit-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 1px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  /* Make the table responsive */
+  @media only screen and (max-width: 600px) {
+    th {
+      font-size: 12px;
     }
-    th{
-        justify-content: space-around;
+    td {
+      font-size: 12px;
     }
-}
+  }
+  
+   
+  

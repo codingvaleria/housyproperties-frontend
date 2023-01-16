@@ -4,9 +4,9 @@ import "./Contact.css"
 function Contact() {
   return (
     <>
-    <div id="overlay">
+    <div className="overlay">
                       <h2>Contact Us</h2>
-                <form id="form_card"> 
+                <form className="form" id="form_card"> 
                     
                     <div>
                             <input type="text" 

@@ -43,6 +43,13 @@
   font-size: 20px;
   flex: 1;
   color: black;
+  border: none;
+  margin: 0px;
+}
+
+.search-inner input[type="text"] {
+  border: none;
+  margin: 0px;
 }
 
 ::placeholder {

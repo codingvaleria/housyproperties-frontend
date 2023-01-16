@@ -9,7 +9,7 @@ function Addpropertyform() {
       <div className="form-wrapper">
         <form className="upload-form">
           <div className="title">Add Property Form </div>
-          <div className="form">
+          <div className="property-form">
             <div className="input-field">
               <i class="icon fa fa-home" aria-hidden="true"></i>
               <input
