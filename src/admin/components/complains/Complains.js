@@ -1,6 +1,5 @@
 import React from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
-
 function Complains() {
   return (
     <div>
@@ -14,9 +13,10 @@ function Complains() {
         <th>Phone No</th>
         <th>House Type</th>
         <th>Unit Type</th>
-        <th>location</th>
-        <th>complain</th>
+        <th>Location</th>
+        <th>Complain</th>
         <th>Action</th>
+        <th>Status</th>
         <tr>
           <td>James</td>
           <td>12</td>
@@ -29,7 +29,15 @@ function Complains() {
             similique quisquam molestias optio dicta esse? Voluptate magni
             voluptatem iste excepturi.
           </td>
-          <td className="delete"></td>
+          <td className="delete">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>David</td>
@@ -43,7 +51,15 @@ function Complains() {
             aliquid aspernatur consequatur voluptates aut doloremque eum
             deleniti hic totam?
           </td>
-          <td className="delete"></td>
+          <td className="delete">
+            <i className="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>Michael</td>
@@ -58,7 +74,15 @@ function Complains() {
             libero repellendus quia suscipit voluptatum nihil, quos enim
             doloremque maiores quo, at dolore.
           </td>
-          <td className="delete"></td>
+          <td className="delete">
+            <i className="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>Duncan</td>
@@ -72,7 +96,15 @@ function Complains() {
             blanditiis architecto error omnis. Deleniti omnis iste culpa sunt
             odio reiciendis.
           </td>
-          <td className="delete"></td>
+          <td className="delete">
+            <i className="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>Joseph</td>
@@ -86,7 +118,15 @@ function Complains() {
             error natus debitis enim praesentium dolore sint vel ducimus
             expedita minima?
           </td>
-          <td className="delete"></td>
+          <td className="delete">
+            <i className="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>Michael</td>
@@ -99,11 +139,18 @@ function Complains() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus,
             asperiores.
           </td>
-          <td className="delete"></td>
+          <td className="delete">
+            <i className="fa fa-trash" aria-hidden="true"></i>
+          </td>
+          <td>
+            <select>
+              <option>Closed</option>
+              <option>In Progress</option>
+            </select>
+          </td>
         </tr>
       </table>
     </div>
   );
 }
-
 export default Complains;
