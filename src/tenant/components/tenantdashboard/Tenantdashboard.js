@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import "./Tenantdashboard.css";
 import logo from "../../../images/logo.png";
 
@@ -10,6 +11,11 @@ function Tenantdashboard() {
   const [unitType, setUnitType] = useState("");
   const [location, setLocation] = useState("");
   const [message, setMessage] = useState("");
+
+  const navigate = useNavigate();
+  const navigateToSignIn = () =>{
+    navigate("/signin")
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -26,6 +32,11 @@ function Tenantdashboard() {
         location: location,
         message: message,
       }),
+    })
+    .then(r=>{
+      if(r.ok){
+        navigate('/home')
+      }
     })
   
   }
@@ -53,8 +64,8 @@ function Tenantdashboard() {
                 <a href="#complains">Complains</a>
               </div>
 
-              <div className="dashboardicon">
-                <i class="fa fa-sign-out" aria-hidden="true"></i>Logout
+              <div onClick={navigateToSignIn} className="dashboardicon">
+                <i  class="fa fa-sign-out" aria-hidden="true" ></i>Logout
               </div>
             </div>
           </div>
