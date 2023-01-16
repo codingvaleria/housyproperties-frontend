@@ -35,7 +35,7 @@ function Tenantdashboard() {
     })
     .then(r=>{
       if(r.ok){
-        navigate('/home')
+        navigate('/')
       }
     })
   
