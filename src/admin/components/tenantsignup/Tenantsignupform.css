@@ -104,6 +104,16 @@ input[type="submit"] {
   outline: none;
 }
 
+input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #dddd;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
 .submit-wrapper input[type="submit"] {
   padding-left: 70px;
 }
