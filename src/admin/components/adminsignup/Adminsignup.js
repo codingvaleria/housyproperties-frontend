@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Adminsignup.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
-
 function Adminsignup({ onLogin }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -13,12 +12,11 @@ function Adminsignup({ onLogin }) {
   // eslint-disable-next-line no-unused-vars
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/adminsignup", {
+    fetch("/admin/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,30 +31,26 @@ function Adminsignup({ onLogin }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-        navigate(`/adminlogin`);
+        navigate(`/admin/login`);
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
     });
   }
-
   return (
-    <div className="main-a">
-      <div className="form-field">
-        <form id="form" onSubmit={handleSubmit}>
-          <div className="logo-a">
-            <div className="logo-container">
-              <img src={logo} alt="logo" className="logo-img"></img>
+    <div className="admin-signup-main-a">
+      <div className="admin-sign-up-submain-a">
+        <form id="s-form" onSubmit={handleSubmit}>
+          <div className="admin-signup-logo-a">
+            <div className="admin-signup-logo-container">
+              <img src={logo} alt="logo" className="admin-signup-logo-img"></img>
             </div>
           </div>
-
-          <div className="title-a">
+          <div className="title-aa">
             <h1>Admin Sign-Up</h1>
           </div>
-
           <div className="input-e">
             <i class="ico fa fa-user" aria-hidden="true"></i>
-
             <input
               type="text"
               id="username"
@@ -67,10 +61,8 @@ function Adminsignup({ onLogin }) {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-
           <div className="input-e">
             <i class="ico fa fa-envelope" aria-hidden="true"></i>
-
             <input
               type="text"
               id="email"
@@ -81,10 +73,8 @@ function Adminsignup({ onLogin }) {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-
           <div className="input-e">
             <i class="ico fa fa-address-book" aria-hidden="true"></i>
-
             <input
               type="text"
               id="address"
@@ -95,10 +85,8 @@ function Adminsignup({ onLogin }) {
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
-
           <div className="input-e">
             <i class="ico fa fa-key" aria-hidden="true"></i>
-
             <input
               type="password"
               id="password"
@@ -109,10 +97,8 @@ function Adminsignup({ onLogin }) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-
           <div className="input-e">
             <i class="ico fa fa-key" aria-hidden="true"></i>
-
             <input
               type="password"
               id="password"
@@ -123,7 +109,6 @@ function Adminsignup({ onLogin }) {
               onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
           </div>
-
           {errors.length > 0 && (
             <div className="input-d">
               <div style={{ color: "red" }}>
@@ -133,9 +118,8 @@ function Adminsignup({ onLogin }) {
               </div>
             </div>
           )}
-
-          <div className="login-a">
-            <button onSubmit={handleSubmit} type="submit">
+          <div className="signup">
+            <button className="s-button" onSubmit={handleSubmit} type="submit">
               Sign Up
             </button>
           </div>
