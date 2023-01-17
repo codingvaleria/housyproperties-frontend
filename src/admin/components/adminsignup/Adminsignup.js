@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Adminsignup.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
-function Adminsignup(/*onLogin*/) {
+function Adminsignup({onLogin}) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -30,7 +30,7 @@ function Adminsignup(/*onLogin*/) {
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => /*onLogin*/(user));
+        r.json().then((user) => onLogin (user));
         navigate(`/admin/login`);
       } else {
         r.json().then((err) => setErrors(err.errors));
