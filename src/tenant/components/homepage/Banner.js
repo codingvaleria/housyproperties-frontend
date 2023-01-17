@@ -16,7 +16,7 @@ function Banner() {
         <Search />
       </div>
       <div className="feature-container">
-        <div className="feature-title">
+        <div className="feature-title" id="property_type">
           <h2>Featured Property Types</h2>
         </div>
         <div className="feature-elements">
@@ -24,8 +24,8 @@ function Banner() {
           <img src={apartments} alt="apartments" />
           <img src={villa} alt="villa" />
         </div>
-        <div className="properties-element">
-          <h1>Our Properties</h1>
+        <div className="properties-element" id="properties">
+          <h1 >Our Properties</h1>
           <p
             onClick={() => {
               navigate("/about");
