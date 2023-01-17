@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Adminsignup.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
-function Adminsignup({ onLogin }) {
+function Adminsignup(/*onLogin*/) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -16,21 +16,21 @@ function Adminsignup({ onLogin }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/admin/signup", {
+    fetch("https://housy-properties-production.up.railway.app/admins", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
-        email,
-        password,
-        password_confirmation: passwordConfirmation,
+        username: username,
+        email: email,
+        password: password,
+        password_confirmation: passwordConfirmation
       }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) => /*onLogin*/(user));
         navigate(`/admin/login`);
       } else {
         r.json().then((err) => setErrors(err.errors));
@@ -50,7 +50,7 @@ function Adminsignup({ onLogin }) {
             <h1>Admin Sign-Up</h1>
           </div>
           <div className="input-e">
-            <i class="ico fa fa-user" aria-hidden="true"></i>
+            <i className="ico fa fa-user" aria-hidden="true"></i>
             <input
               type="text"
               id="username"
@@ -62,7 +62,7 @@ function Adminsignup({ onLogin }) {
             />
           </div>
           <div className="input-e">
-            <i class="ico fa fa-envelope" aria-hidden="true"></i>
+            <i className="ico fa fa-envelope" aria-hidden="true"></i>
             <input
               type="text"
               id="email"
@@ -74,7 +74,7 @@ function Adminsignup({ onLogin }) {
             />
           </div>
           <div className="input-e">
-            <i class="ico fa fa-address-book" aria-hidden="true"></i>
+            <i className="ico fa fa-address-book" aria-hidden="true"></i>
             <input
               type="text"
               id="address"
@@ -86,7 +86,7 @@ function Adminsignup({ onLogin }) {
             />
           </div>
           <div className="input-e">
-            <i class="ico fa fa-key" aria-hidden="true"></i>
+            <i className="ico fa fa-key" aria-hidden="true"></i>
             <input
               type="password"
               id="password"
@@ -98,10 +98,10 @@ function Adminsignup({ onLogin }) {
             />
           </div>
           <div className="input-e">
-            <i class="ico fa fa-key" aria-hidden="true"></i>
+            <i className="ico fa fa-key" aria-hidden="true"></i>
             <input
               type="password"
-              id="password"
+              id="password-c"
               name="confirm-password"
               placeholder="Confirm Password"
               value={passwordConfirmation}
