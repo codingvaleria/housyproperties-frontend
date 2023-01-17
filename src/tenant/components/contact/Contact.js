@@ -33,7 +33,7 @@ function Contact() {
   }
 
   return (
-    <div className="overlay">
+    <div className="overlay" id="contact">
       <h2>Contact Us</h2>
       <form onSubmit={handleSubmit} className="contact-form" id="form_card">
         <div>
