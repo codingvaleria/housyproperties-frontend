@@ -13,12 +13,12 @@ function Adminlogin(onLogin) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("/admin/login", {
+    fetch("https://housy-properties-production.up.railway.app/admins", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ username: username, password: password }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
@@ -54,7 +54,7 @@ function Adminlogin(onLogin) {
             />
           </div>
           <div className="input-f">
-            <i class="l-icon fa fa-key" aria-hidden="true"></i>
+            <i className="l-icon fa fa-key" aria-hidden="true"></i>
             <input
               className="form-c"
               type="password"
