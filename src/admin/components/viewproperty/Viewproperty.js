@@ -3,17 +3,17 @@ import { useState } from "react";
 import  logo from "../../../images/logo.png"
 import "./Viewproperty.css"
 import propertiesData from "./propertiesData";
-// import React, { useState, useEffect } from 'react'; FOR API CONSUMPTION
+import { useEffect } from 'react'; //FOR API CONSUMPTION
 import AdminBanner from "../adminhome/AdminBanner";
 import AdminNavBar from "../adminhome/AdminNavbar";
 
 const Viewproperty = () => {
   const initialState = {
-    data: propertiesData,
+    data: [],
     editingIndex: -1,
     newProperties: {
       name: "",
-      type: "",
+      property_type: "",
       unit_type: "",
       location: "",
       amount: ""
@@ -36,12 +36,12 @@ const Viewproperty = () => {
   //     }
   //   });
   
-  //   useEffect(() => {
-  //     fetch('https://your-api-endpoint.com/properties')
-  //       .then(response => response.json())
-  //       .then(data => setState({ ...state, data }))
-  //       .catch(error => console.error(error));
-  //   }, []);
+    useEffect(() => {
+      fetch('https://housy-properties-production.up.railway.app/properties')
+        .then(response => response.json())
+        .then(data => setState({ ...state, data }))
+        .catch(error => console.error(error));
+    }, []);
 
   const handleEdit = (index) => {
     setState({...state, editingIndex: index});
@@ -84,7 +84,7 @@ const Viewproperty = () => {
           <tr>
             <th className="column-name">Name</th>
             <th className="column-image">Image</th>
-            <th className="column-type">Type</th>
+            <th className="column-type">Property Type</th>
             <th className="column-unit">Unit Type</th>
             <th className="column-location">Location</th>
             <th className="column-amount">Amount</th>
@@ -104,7 +104,7 @@ const Viewproperty = () => {
                     <img className="p-img" src={logo} alt={row.name} width="100" />
                   </td>
                   <td>
-                    <input value={row.type} onChange={e => handleChange(e, index, "type")} />
+                    <input value={row.property_type} onChange={e => handleChange(e, index, "property_type")} />
                   </td>
                   <td>
                     <input value={row.unit_type} onChange={e => handleChange(e, index, "unit_type")} />
@@ -126,7 +126,7 @@ const Viewproperty = () => {
                   <td>
                     <img className="p-img" src={logo} alt={row.name} width="100" />
                   </td>
-                  <td>{row.type}</td>
+                  <td>{row.property_type}</td>
                   <td>{row.unit_type}</td>
                   <td>{row.location}</td>
                   <td>{row.amount}</td>

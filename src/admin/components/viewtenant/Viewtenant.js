@@ -1,23 +1,24 @@
 import React from "react";
 import { useState } from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
-// import React, { useState, useEffect } from 'react'; FOR API CONSUMPTION
-import tenantData from "./tenantData";
+import { useEffect } from 'react'; //FOR API CONSUMPTION
+//import tenantData from "./tenantData";
 import "./Viewtenant.css";
 
 
 const Viewtenant = () => {
   const initialState = {
-    data: tenantData,
+    data: [],
     editingIndex: -1,
     newTenant: {
         name: "",
         hse_num: "",
-        phone: "",
+        phone_no: "",
         hse_type: "",
         unit_type: "",
         date_in: "",
-        balance: "",
+        //balance: "",
+        rent_payable: "",
         action: ""
     }
 }
@@ -25,25 +26,27 @@ const Viewtenant = () => {
 const [state, setState] = useState(initialState);
 
  // FOR API CONSUMPTION
-  // const PropertyTable = () => {
-  //   const [state, setState] = useState({
-  //     data: [],
-  //     editingIndex: -1,
-  //     newProperties: {
-  //       name: "",
-  //       type: "",
-  //       unit_type: "",
-  //       location: "",
-  //       amount: ""
-  //     }
-  //   });
+// const PropertyTable = () => {
+//     const [state, setState] = useState({
+//       data: [],
+//       editingIndex: -1,
+//       newProperties: {
+//         name: "",
+//         type: "",
+//         unit_type: "",
+//         location: "",
+//         amount: ""
+//       }
+//     });
   
-  //   useEffect(() => {
-  //     fetch('https://your-api-endpoint.com/properties')
-  //       .then(response => response.json())
-  //       .then(data => setState({ ...state, data }))
-  //       .catch(error => console.error(error));
-  //   }, []);
+    useEffect(() => {
+      fetch('https://housy-properties-production.up.railway.app/tenants')
+        .then(response => response.json())
+        .then(data => setState({ ...state, data }))
+        .catch(error => console.error(error));
+    }, []);
+  
+
   
 const handleEdit = (index) => {
   setState({...state, editingIndex: index});
@@ -107,7 +110,7 @@ const handleDelete = (index) => {
                                     <input value={row.hse_num} onChange={e => handleChange(e, index, "hse_num")} />
                                 </td>
                                 <td>
-                                    <input value={row.phone} onChange={e => handleChange(e, index, "phone")} />
+                                    <input value={row.phone_no} onChange={e => handleChange(e, index, "phone_no")} />
                                 </td>
                                 <td>
                                     <input value={row.hse_type} onChange={e => handleChange(e, index, "hse_type")} />
@@ -119,7 +122,7 @@ const handleDelete = (index) => {
                                     <input value={row.date_in} onChange={e => handleChange(e, index, "date_in")} />
                                 </td>
                                 <td>
-                                    <input value={row.balance} onChange={e => handleChange(e, index, "balance")} />
+                                    <input value={row.rent_payable} onChange={e => handleChange(e, index, "balance")} />
                                 </td>
                                 <td>
                                     <button className="p-edit-button" onClick={() => handleSave()}>Save</button>
@@ -130,11 +133,11 @@ const handleDelete = (index) => {
                           <>
                                 <td>{row.name}</td>
                                 <td>{row.hse_num}</td>
-                                <td>{row.phone}</td>
+                                <td>{row.phone_no}</td>
                                 <td>{row.hse_type}</td>
                                 <td>{row.unit_type}</td>
                                 <td>{row.date_in}</td>
-                                <td>{row.balance}</td>
+                                <td>{row.rent_payable}</td>
                                 <td>
                                     <button className="p-edit-button" onClick={() => handleEdit(index)}>Edit</button>
                                     <button className="p-delete-button" onClick={() => handleDelete(index)}>Delete</button>
