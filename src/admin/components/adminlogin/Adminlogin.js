@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Adminlogin.css";
 import logo from "../../../images/logo.png";
 import { Link } from "react-router-dom";
-function Adminlogin(onLogin) {
+function Adminlogin({onLogin}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -13,12 +13,12 @@ function Adminlogin(onLogin) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("https://housy-properties-production.up.railway.app/admins", {
+    fetch("https://housy-properties-production.up.railway.app/admin/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: username, password: password }),
+      body: JSON.stringify({ username, password }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
@@ -42,7 +42,7 @@ function Adminlogin(onLogin) {
             <h1>Admin Login</h1>
           </div>
           <div className="input-f">
-            <i class="l-icon fa fa-user" aria-hidden="true"></i>
+            <i className="l-icon fa fa-user" aria-hidden="true"></i>
             <input
               className="form-c"
               type="text"
