@@ -1,17 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
 import "./Addpropertyform.css";
+//import { useNavigate } from "react-router-dom";
 
-function Addpropertyform() {
+function Addpropertyform( /*onAddProperty*/ ) {
+  const [formData] = useState({
+    propertyName: "",
+    propertyType: "",
+    unitType: "",
+    location: "",
+    image: "",
+    amount: 0,
+  });
+
+  //const navigate = useNavigate();
+
+  function handleSubmit(e) {
+    console.log(formData);
+    e.preventDefault();
+    fetch("https://housy-properties-production.up.railway.app/properties", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      /*.then((res) => res.json())
+      .then((newProperty) => onAddProperty(newProperty));
+        navigate("/admin/viewproperty");*/
+  
+  }
+
   return (
     <div>
       <AdminNavBar />
       <div className="form-wrapper">
-        <form className="upload-form">
+        <form className="upload-form" onSubmit={handleSubmit}>
           <div className="title">Add Property Form </div>
           <div className="property-form">
             <div className="input-field">
-              <i class="icon fa fa-home" aria-hidden="true"></i>
+              <i className="icon fa fa-home" aria-hidden="true"></i>
               <input
                 className="form-control"
                 type="text"
@@ -22,7 +50,7 @@ function Addpropertyform() {
             </div>
             <div className="input-field">
               <div className="custom-select">
-                <i class="icon fa fa-home" aria-hidden="true"></i>
+                <i className="icon fa fa-home" aria-hidden="true"></i>
                 <select>
                   <option value="">Property Type</option>
                   <option value="Apartment">Apartment</option>
@@ -33,7 +61,7 @@ function Addpropertyform() {
             </div>
             <div className="input-field">
               <div className="custom-select">
-                <i class="icon fa fa-home" aria-hidden="true"></i>
+                <i className="icon fa fa-home" aria-hidden="true"></i>
                 <select>
                   <option value="">Unit Type</option>
                   <option value="1 Bedroom">1 Bedroom</option>
@@ -44,7 +72,7 @@ function Addpropertyform() {
               </div>
             </div>
             <div className="input-field">
-              <i class="icon fa fa-map-marker" aria-hidden="true"></i>
+              <i className="icon fa fa-map-marker" aria-hidden="true"></i>
               <input
                 className="form-control"
                 type="text"
@@ -54,7 +82,7 @@ function Addpropertyform() {
               />
             </div>
             <div className="input-field">
-              <i class="icon fa fa-picture-o" aria-hidden="true"></i>
+              <i className="icon fa fa-picture-o" aria-hidden="true"></i>
               <input
                 className="form-control"
                 type="text"
@@ -64,7 +92,7 @@ function Addpropertyform() {
               />
             </div>
             <div className="input-field">
-              <i class="icon fa fa-money" aria-hidden="true"></i>
+              <i className="icon fa fa-money" aria-hidden="true"></i>
               <input
                 className="form-control"
                 type="number"
@@ -114,7 +142,7 @@ function Addpropertyform() {
             </div>
 
             <div className="submit-wrapper">
-              <input type="submit" value="Add Property"></input>
+              <input type="submit" value="Add Property" onSubmit={handleSubmit}></input>
             </div>
           </div>
         </form>
