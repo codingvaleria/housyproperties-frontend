@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import data from "./data";
+
 
 function Housecards() {
   let properties = data.map((e) => {
