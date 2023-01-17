@@ -135,7 +135,7 @@ function Tenantdashboard() {
                 
                   <input
                     className="t-input"
-                    type="text"
+                    type="Number"
                     placeholder="Phone Number"
                     value={Phone}
                     onChange={(e)=>setPhoneNo(e.target.value)}
