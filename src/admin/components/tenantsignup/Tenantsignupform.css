@@ -1,8 +1,7 @@
-.form-wrapper {
+.tenant-form-wrapper {
   padding: 0 10px;
 }
-
-.upload-form {
+.tenant-upload-form {
   font-size: 18px;
   max-width: 700px;
   width: 100%;
@@ -14,8 +13,7 @@
   margin-top: 50px;
   background-color: #d9d9d9;
 }
-
-.title {
+.tenant-form-title {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 25px;
@@ -23,35 +21,29 @@
   text-align: center;
   padding-bottom: 20px;
 }
-
-.input-field {
+.tenant-input-field {
   position: relative;
 }
-
 .custom-select {
   position: relative;
   z-index: 100;
 }
-
-.icon {
+.picon {
   position: absolute;
   top: calc(35%);
   left: 1.25rem;
   z-index: 100;
 }
-
-.input-field .form-control {
+.tenant-input-field .form-control {
   left: 1.5rem;
   padding-left: 3rem;
 }
-
-.input-field label {
+.tenant-input-field label {
   width: 200px;
   margin-right: 10px;
   margin-top: 20px;
   font-size: 20px;
 }
-
 input[type="text"] {
   width: 100%;
   padding: 12px 15px;
@@ -61,7 +53,6 @@ input[type="text"] {
   border-radius: 15px;
   font-size: 20px;
 }
-
 input[type="password"] {
   width: 100%;
   padding: 12px 15px;
@@ -71,7 +62,6 @@ input[type="password"] {
   border-radius: 15px;
   font-size: 20px;
 }
-
 .custom-select select {
   position: relative;
   width: 100%;
@@ -84,14 +74,12 @@ input[type="password"] {
   color: grey;
   background-color: #fff;
 }
-
 .submit-wrapper {
   padding-top: 10px;
   margin-top: 20px;
   display: flex;
   justify-content: center;
 }
-
 input[type="submit"] {
   width: 40%;
   padding: 12px 5px;
@@ -103,13 +91,20 @@ input[type="submit"] {
   border-radius: 13px;
   outline: none;
 }
-
+input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #dddd;
+  border-radius: 15px;
+  font-size: 20px;
+}
 .submit-wrapper input[type="submit"] {
   padding-left: 70px;
 }
-
 @media (max-width: 700px) {
-  .input-field {
+  .tenant-input-field {
     flex-direction: column;
     align-items: flex-start;
   }

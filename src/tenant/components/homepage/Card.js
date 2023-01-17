@@ -2,7 +2,6 @@ import React from "react";
 import "./Card.css";
 
 function Card({
-
   propertyName,
   property_type,
   unit_type,
