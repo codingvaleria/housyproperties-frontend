@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
 import "./Addpropertyform.css";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
-function Addpropertyform({ property, setProperty }) {
-  const [formData, setFormData] = useState({
+function Addpropertyform( /*onAddProperty*/ ) {
+  const [formData] = useState({
     propertyName: "",
     propertyType: "",
     unitType: "",
@@ -13,30 +13,22 @@ function Addpropertyform({ property, setProperty }) {
     amount: 0,
   });
 
-  const navigate = useNavigate();
-
-  function handleChange(e) {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  }
+  //const navigate = useNavigate();
 
   function handleSubmit(e) {
     console.log(formData);
     e.preventDefault();
-    fetch("http://localhost:3000/properties", {
+    fetch("https://housy-properties-production.up.railway.app/properties", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        setProperty([...property, data]);
-        navigate("/admin/viewproperty");
-      });
+      /*.then((res) => res.json())
+      .then((newProperty) => onAddProperty(newProperty));
+        navigate("/admin/viewproperty");*/
+  
   }
 
   return (
@@ -47,19 +39,18 @@ function Addpropertyform({ property, setProperty }) {
           <div className="title">Add Property Form </div>
           <div className="property-form">
             <div className="input-field">
-              <i class="icon fa fa-home" aria-hidden="true"></i>
+              <i className="icon fa fa-home" aria-hidden="true"></i>
               <input
                 className="form-control"
                 type="text"
                 placeholder="Property Name"
                 id="Property Name"
                 name="Property Name"
-                onChange={handleChange}
               />
             </div>
             <div className="input-field">
               <div className="custom-select">
-                <i class="icon fa fa-home" aria-hidden="true"></i>
+                <i className="icon fa fa-home" aria-hidden="true"></i>
                 <select>
                   <option value="">Property Type</option>
                   <option value="Apartment">Apartment</option>
@@ -70,7 +61,7 @@ function Addpropertyform({ property, setProperty }) {
             </div>
             <div className="input-field">
               <div className="custom-select">
-                <i class="icon fa fa-home" aria-hidden="true"></i>
+                <i className="icon fa fa-home" aria-hidden="true"></i>
                 <select>
                   <option value="">Unit Type</option>
                   <option value="1 Bedroom">1 Bedroom</option>
@@ -81,36 +72,33 @@ function Addpropertyform({ property, setProperty }) {
               </div>
             </div>
             <div className="input-field">
-              <i class="icon fa fa-map-marker" aria-hidden="true"></i>
+              <i className="icon fa fa-map-marker" aria-hidden="true"></i>
               <input
                 className="form-control"
                 type="text"
                 placeholder="Location"
                 id="Location"
                 name="Location"
-                onChange={handleChange}
               />
             </div>
             <div className="input-field">
-              <i class="icon fa fa-picture-o" aria-hidden="true"></i>
+              <i className="icon fa fa-picture-o" aria-hidden="true"></i>
               <input
                 className="form-control"
                 type="text"
                 placeholder="Image"
                 id="Image"
                 name="Image"
-                onChange={handleChange}
               />
             </div>
             <div className="input-field">
-              <i class="icon fa fa-money" aria-hidden="true"></i>
+              <i className="icon fa fa-money" aria-hidden="true"></i>
               <input
                 className="form-control"
                 type="number"
                 placeholder="Amount"
                 id="Amount"
                 name="Amount"
-                onChange={handleChange}
               />
             </div>
             <div className="facilities-wrapper">
@@ -122,7 +110,6 @@ function Addpropertyform({ property, setProperty }) {
                   type="checkbox"
                   id="Wifi"
                   name="Wifi"
-                  onChange={handleChange}
                 />
               </div>
               <div className="check-field">
@@ -132,7 +119,6 @@ function Addpropertyform({ property, setProperty }) {
                   type="checkbox"
                   id="Shower"
                   name="Shower"
-                  onChange={handleChange}
                 />
               </div>
               <div className="check-field">
@@ -142,7 +128,6 @@ function Addpropertyform({ property, setProperty }) {
                   type="checkbox"
                   id="Balcony"
                   name="Balcony"
-                  onChange={handleChange}
                 />
               </div>
               <div className="check-field">
@@ -152,7 +137,6 @@ function Addpropertyform({ property, setProperty }) {
                   type="checkbox"
                   id="Parking"
                   name="Parking"
-                  onChange={handleChange}
                 />
               </div>
             </div>
