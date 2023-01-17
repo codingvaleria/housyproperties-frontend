@@ -37,6 +37,8 @@ function Adminsignup({onLogin}) {
         r.json().then((err) => setErrors(err.errors));
       }
     });
+  } else {
+    setErrors({passwordconfirmation:"passwords don't match"})
   }
 }
   return (
