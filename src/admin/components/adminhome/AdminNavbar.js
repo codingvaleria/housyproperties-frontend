@@ -34,6 +34,9 @@ export default function AdminNavBar() {
         <NavLink to="/admin/">Home</NavLink>
         <NavLink to="/admin/addproperty">Add Property</NavLink>
         <NavLink to="/admin/tenantsignup">Add Tenant</NavLink>
+        <NavLink to="/admin/viewtenants">View Tenants</NavLink>
+        <NavLink to="/admin/viewproperty">View Properties</NavLink>
+        <NavLink to="/admin/complains">Complains</NavLink>
         <NavLink to="/admin/login">Logout</NavLink>
       </div>
     </div>
