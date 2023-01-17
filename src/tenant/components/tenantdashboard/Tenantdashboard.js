@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import "./Tenantdashboard.css";
 import logo from "../../../images/logo.png";
 
+
 function Tenantdashboard() {
+  const [Name, setName] = useState("");
+  const [Phone, setPhoneNo] = useState("");
+  const [Email, setEmail] = useState("");
+  const [HouseType, setHouseType] = useState("");
+  const [complain, setComplain] = useState("");
+
+  const navigate = useNavigate();
+  const navigateToSignIn = () =>{
+    navigate("/signin")
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("https://housy-properties-production.up.railway.app/housecomplains", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Name: Name,
+        Phone: Phone,
+        Email: Email,
+        HouseType: HouseType,
+        complain: complain,
+      }),
+    })
+    .then(r=>{
+      if(r.ok){
+        navigate('/')
+      }
+    })
+  
+  }
+
+
   return (
     <div className="tenant-main">
       <div className="tenant-container">
@@ -25,8 +62,8 @@ function Tenantdashboard() {
                 <a href="#complains">Complains</a>
               </div>
 
-              <div className="dashboardicon">
-                <i class="fa fa-sign-out" aria-hidden="true"></i>Logout
+              <div onClick={navigateToSignIn} className="dashboardicon">
+                <i  class="fa fa-sign-out" aria-hidden="true" ></i>Logout
               </div>
             </div>
           </div>
@@ -85,35 +122,59 @@ function Tenantdashboard() {
             <hr />
             <hr />
             <h2 id="complains">Make Complains</h2>
+          <form onSubmit={handleSubmit}>
             <div className="inputs" id="complains">
-              <div className="nameInput">
-                <input className="t-input" type="text" placeholder="Name" />
-                <input
-                  className="t-input"
-                  type="text"
-                  placeholder="Phone Number"
-                />
-              </div>
-              <div className="houseNumberInput">
-                <input
-                  className="t-input"
-                  type="text"
-                  placeholder="House Type"
-                />
-                <input
-                  className="t-input"
-                  type="text"
-                  placeholder="Unit Type"
-                />
-              </div>
-              <div className="nameInput">
-                <input className="t-input" type="text" placeholder="Location" />
-              </div>
-            </div>
-            <textarea name="complains" id="" cols="70" rows="10"></textarea>
-            <div className="sendMessage">
-              <button className="t-button">Send Message</button>
-            </div>
+                <div className="nameInput">
+                  <input 
+                  className="t-input" 
+                  type="text" 
+                  placeholder="Name" 
+                  value={Name}
+                  onChange={(e)=>setName(e.target.value)}
+                  />
+                
+                  <input
+                    className="t-input"
+                    type="text"
+                    placeholder="Phone Number"
+                    value={Phone}
+                    onChange={(e)=>setPhoneNo(e.target.value)}
+                  />
+                </div>
+                <div className="nameInput">
+                    <input 
+                    className="t-input" 
+                    type="text" 
+                    placeholder="Email" 
+                    value={Email}
+                    onChange={(e)=>setEmail(e.target.value)}/>
+                  </div>
+                    <div className="houseNumberInput">
+                      <input
+                     
+                        className="t-input"
+                        type="text"
+                        placeholder="House Type"
+                        value={HouseType}
+                        onChange={(e)=>setHouseType(e.target.value)}
+                      />
+                      </div>
+                 
+                </div>
+                   <textarea 
+                   name="complains" id="" 
+                   cols="70" rows="10"
+                   value={complain}
+                   onChange={(e)=>setComplain(e.target.value)}
+                 >
+                  
+                 </textarea>
+                <div className="sendMessage">
+      
+                   <button className="t-button">Send Message</button>
+            
+                </div>
+            </form>
           </div>
           <hr />
           <hr />
