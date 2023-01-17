@@ -3,9 +3,9 @@ import "./Adminsignup.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
 function Adminsignup({onLogin}) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
@@ -22,9 +22,9 @@ function Adminsignup({onLogin}) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name,
-        email,
-        phone,
+        Name,
+        Email,
+        Phone,
         password,
         passwordConfirmation
       }),
@@ -60,7 +60,7 @@ function Adminsignup({onLogin}) {
               id="name"
               name="name"
               placeholder="Name"
-              value={name}
+              value={Name}
               className="form-c"
               onChange={(e) => setName(e.target.value)}
             />
@@ -72,7 +72,7 @@ function Adminsignup({onLogin}) {
               id="email"
               name="email"
               placeholder="Email"
-              value={email}
+              value={Email}
               className="form-c"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -84,7 +84,7 @@ function Adminsignup({onLogin}) {
               id="phone"
               name="phone"
               placeholder="Phone"
-              value={phone}
+              value={Phone}
               className="form-c"
               onChange={(e) => setPhone(e.target.value)}
             />

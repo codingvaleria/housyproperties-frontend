@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
 import "./Addpropertyform.css";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Addpropertyform( /*onAddProperty*/ ) {
+function Addpropertyform( onAddProperty ) {
   const [formData] = useState({
     propertyName: "",
     propertyType: "",
@@ -13,7 +13,7 @@ function Addpropertyform( /*onAddProperty*/ ) {
     amount: 0,
   });
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     console.log(formData);
@@ -25,9 +25,9 @@ function Addpropertyform( /*onAddProperty*/ ) {
       },
       body: JSON.stringify(formData),
     })
-      /*.then((res) => res.json())
+      .then((res) => res.json())
       .then((newProperty) => onAddProperty(newProperty));
-        navigate("/admin/viewproperty");*/
+        navigate("/admin/viewproperty");
   
   }
 
