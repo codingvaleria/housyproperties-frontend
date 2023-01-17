@@ -13,6 +13,7 @@ const Viewtenant = () => {
       last_name: "",
       property_id: "",
       phone_no: "",
+      email: "",
       HouseType: "",
       unit_type: "",
       date_in: "",
@@ -82,6 +83,7 @@ const Viewtenant = () => {
               <th className="column-name">Last Name</th>
               <th className="column-hse-num">House No.</th>
               <th className="column-phone">Phone No.</th>
+              <th className="column-email">Email Address</th>
               <th className="column-hse-type">House Type</th>
               <th className="column-unit">Unit Type</th>
               <th className="column-date">Date In</th>
@@ -116,6 +118,12 @@ const Viewtenant = () => {
                       <input
                         value={row.phone_no}
                         onChange={(e) => handleChange(e, index, "phone_no")}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        value={row.email}
+                        onChange={(e) => handleChange(e, index, "email")}
                       />
                     </td>
                     <td>
@@ -163,6 +171,7 @@ const Viewtenant = () => {
                     <td>{row.last_name}</td>
                     <td>{row.property_id}</td>
                     <td>{row.phone_no}</td>
+                    <td>{row.email}</td>
                     <td>{row.HouseType}</td>
                     <td>{row.unit_type}</td>
                     <td>{row.date_in}</td>
