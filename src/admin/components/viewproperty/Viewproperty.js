@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import  logo from "../../../images/logo.png"
 import "./Viewproperty.css"
-import propertiesData from "./propertiesData";
+//import propertiesData from "./propertiesData";
 import { useEffect } from 'react'; //FOR API CONSUMPTION
 import AdminBanner from "../adminhome/AdminBanner";
 import AdminNavBar from "../adminhome/AdminNavbar";
@@ -14,6 +14,7 @@ const Viewproperty = () => {
     newProperties: {
       name: "",
       property_type: "",
+      image: "",
       unit_type: "",
       location: "",
       amount: ""
@@ -101,7 +102,7 @@ const Viewproperty = () => {
                     <input value={row.name} onChange={e => handleChange(e, index, "name")} />
                   </td>
                   <td>
-                    <img className="p-img" src={logo} alt={row.name} width="100" />
+                    <img className="p-img" src={row.image} alt={row.name} width="100" />
                   </td>
                   <td>
                     <input value={row.property_type} onChange={e => handleChange(e, index, "property_type")} />
@@ -124,7 +125,7 @@ const Viewproperty = () => {
                 <>
                   <td>{row.name}</td>
                   <td>
-                    <img className="p-img" src={logo} alt={row.name} width="100" />
+                    <img className="p-img" src={row.image} alt={row.name} width="100" />
                   </td>
                   <td>{row.property_type}</td>
                   <td>{row.unit_type}</td>
