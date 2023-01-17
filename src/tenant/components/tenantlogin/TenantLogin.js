@@ -1,18 +1,23 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 import "./Tenantlogin.css";
 
 const TenantLogin = ({ onLogin }) => {
-  const [email, setemail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetch("http://localhost:3000/login", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,15 +25,19 @@ const TenantLogin = ({ onLogin }) => {
       body: JSON.stringify({
         email,
         password,
-      }).then((r) => {
-        if (r.ok) {
-          r.json().then((user) => onLogin(user));
-        } else {
-          r.json().then((err) => setErrors(err.errors));
-        }
-      }),
-    });
+      })
+    })
+    .then((r) => {
+      if (r.ok) {
+        r.json().then((user) => onLogin(user));
+        navigate(`/mydashboard`);
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+      setIsLoading(false);
+    });    
   };
+
 
   return (
     <div className="tenant-signin">
@@ -54,6 +63,7 @@ const TenantLogin = ({ onLogin }) => {
                 placeholder="Email"
                 value={email}
                 className="email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             {/* PASSWORD */}
@@ -83,8 +93,8 @@ const TenantLogin = ({ onLogin }) => {
             {/* LOGIN BUTTON */}
             <button
               className="btn col-md-8 mx-auto text-center"
-              onSubmit={handleSubmit}
               type="submit"
+              onClick = {handleSubmit}
             >
               Login
             </button>
@@ -92,7 +102,7 @@ const TenantLogin = ({ onLogin }) => {
             {/* FORGOT PASSWORD */}
             <div className="forgot-password">
               <p className="forgot">
-                Forgot Password? <a href="#">Click here</a>
+                Forgot Password? <Link to="/forgotpassword">Click here</Link>
               </p>
             </div>
           </form>
@@ -106,5 +116,6 @@ const TenantLogin = ({ onLogin }) => {
     </div>
   );
 };
+
 
 export default TenantLogin;
