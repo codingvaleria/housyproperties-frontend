@@ -10,6 +10,7 @@ const Viewtenant = () => {
     editingIndex: -1,
     newTenant: {
       name: "",
+      last_name: "",
       property_id: "",
       phone_no: "",
       HouseType: "",
@@ -77,7 +78,8 @@ const Viewtenant = () => {
         <table className="tenant-table">
           <thead className="tenant-table-header">
             <tr>
-              <th className="column-name">Name</th>
+              <th className="column-name">First Name</th>
+              <th className="column-name">Last Name</th>
               <th className="column-hse-num">House No.</th>
               <th className="column-phone">Phone No.</th>
               <th className="column-hse-type">House Type</th>
@@ -96,6 +98,12 @@ const Viewtenant = () => {
                       <input
                         value={row.name}
                         onChange={(e) => handleChange(e, index, "name")}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        value={row.last_name}
+                        onChange={(e) => handleChange(e, index, "last_name")}
                       />
                     </td>
                     <td>
@@ -152,6 +160,7 @@ const Viewtenant = () => {
                 ) : (
                   <>
                     <td>{row.name}</td>
+                    <td>{row.last_name}</td>
                     <td>{row.property_id}</td>
                     <td>{row.phone_no}</td>
                     <td>{row.HouseType}</td>
