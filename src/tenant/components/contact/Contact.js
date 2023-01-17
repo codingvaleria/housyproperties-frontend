@@ -8,6 +8,7 @@ function Contact() {
   const [Email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState([]);
  
   const navigate = useNavigate();
   function handleSubmit(e) {
@@ -24,9 +25,12 @@ function Contact() {
         message: message,
       }),
     })
-    .then(r=>{
-      if(r.ok){
+    .then(res=>{
+      if(res.ok){
         navigate('/')
+      }
+      else {
+        res.json().then((err) => setErrors(err.errors));
       }
     })
   
@@ -70,7 +74,13 @@ function Contact() {
           />
 
           <button id="btn">Send Message</button>
+
         </div>
+        <formField>
+                  {errors?.map((err) => (
+                    <error key={err}>{err}</error>
+                   ))}
+                 </formField>
       </form>
     </div>
   );

@@ -10,6 +10,7 @@ function Tenantdashboard() {
   const [Email, setEmail] = useState("");
   const [HouseType, setHouseType] = useState("");
   const [complain, setComplain] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const navigate = useNavigate();
   const navigateToSignIn = () =>{
@@ -31,9 +32,12 @@ function Tenantdashboard() {
         complain: complain,
       }),
     })
-    .then(r=>{
-      if(r.ok){
+    .then(res=>{
+      if(res.ok){
         navigate('/')
+      }
+      else {
+        res.json().then((err) => setErrors(err.errors));
       }
     })
   
@@ -174,6 +178,11 @@ function Tenantdashboard() {
                    <button className="t-button">Send Message</button>
             
                 </div>
+                 <formField>
+                  {errors?.map((err) => (
+                    <error key={err}>{err}</error>
+                   ))}
+                 </formField>
             </form>
           </div>
           <hr />
