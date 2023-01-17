@@ -24,8 +24,8 @@ function Banner() {
           <img src={apartments} alt="apartments" />
           <img src={villa} alt="villa" />
         </div>
-        <div className="properties-element">
-          <h1>Our Properties</h1>
+        <div className="properties-element" >
+          <h1 id="#properties">Our Properties</h1>
           <p
             onClick={() => {
               navigate("/about");
