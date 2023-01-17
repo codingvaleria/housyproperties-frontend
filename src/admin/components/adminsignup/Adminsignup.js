@@ -3,9 +3,9 @@ import "./Adminsignup.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
 function Adminsignup({onLogin}) {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
@@ -16,16 +16,17 @@ function Adminsignup({onLogin}) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("https://housy-properties-production.up.railway.app/admins", {
+    if (password===passwordConfirmation) {fetch("https://housy-properties-production.up.railway.app/admins", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: username,
-        email: email,
-        password: password,
-        password_confirmation: passwordConfirmation
+        name,
+        email,
+        phone,
+        password,
+        passwordConfirmation
       }),
     }).then((r) => {
       setIsLoading(false);
@@ -37,6 +38,7 @@ function Adminsignup({onLogin}) {
       }
     });
   }
+}
   return (
     <div className="admin-signup-main-a">
       <div className="admin-sign-up-submain-a">
@@ -53,12 +55,12 @@ function Adminsignup({onLogin}) {
             <i className="ico fa fa-user" aria-hidden="true"></i>
             <input
               type="text"
-              id="username"
-              name="username"
+              id="name"
+              name="name"
               placeholder="Name"
-              value={username}
+              value={name}
               className="form-c"
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="input-e">
@@ -74,15 +76,15 @@ function Adminsignup({onLogin}) {
             />
           </div>
           <div className="input-e">
-            <i className="ico fa fa-address-book" aria-hidden="true"></i>
+            <i className="ico fa fa-phone" aria-hidden="true"></i>
             <input
               type="text"
-              id="address"
-              name="address"
-              placeholder="Address"
-              value={address}
+              id="phone"
+              name="phone"
+              placeholder="Phone"
+              value={phone}
               className="form-c"
-              onChange={(e) => setAddress(e.target.value)}
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="input-e">
