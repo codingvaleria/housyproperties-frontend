@@ -1,31 +1,44 @@
 import React, { useState } from "react";
 import "./Search.css";
 
-export default function Search() {
-  const [value, setValue] = useState("");
+export default function Search({ data, setData }) {
+  let [query, setQuery] = useState("");
 
-  const onChange = (event) => {
-    setValue(event.target.value);
-  };
+  function handleQuery(e) {
+    e.preventDefault();
+    console.log(query);
 
-  const onSearch = (searchTerm) => {
-    setValue(searchTerm);
-    console.log(searchTerm);
-  };
+    fetch(
+      "https://housy-properties-production.up.railway.app/property_search", 
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((res) => setData(res));
+  }
 
   return (
     <div className="search">
-      <div className="search-container">
+      <form className="search-container" onSubmit={handleQuery}>
         <div className="search-inner">
           <input
             type="text"
-            value={value}
-            onChange={onChange}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
             placeholder="Search property"
           />
-          <i className="fa fa-search" aria-hidden="true"></i>
+          <button type="submit">
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
