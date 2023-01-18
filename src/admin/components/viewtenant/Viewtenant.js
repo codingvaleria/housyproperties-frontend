@@ -10,8 +10,10 @@ const Viewtenant = () => {
     editingIndex: -1,
     newTenant: {
       name: "",
+      last_name: "",
       property_id: "",
       phone_no: "",
+      email: "",
       HouseType: "",
       unit_type: "",
       date_in: "",
@@ -77,9 +79,11 @@ const Viewtenant = () => {
         <table className="tenant-table">
           <thead className="tenant-table-header">
             <tr>
-              <th className="column-name">Name</th>
+              <th className="column-name">First Name</th>
+              <th className="column-name">Last Name</th>
               <th className="column-hse-num">House No.</th>
               <th className="column-phone">Phone No.</th>
+              <th className="column-email">Email Address</th>
               <th className="column-hse-type">House Type</th>
               <th className="column-unit">Unit Type</th>
               <th className="column-date">Date In</th>
@@ -100,6 +104,12 @@ const Viewtenant = () => {
                     </td>
                     <td>
                       <input
+                        value={row.last_name}
+                        onChange={(e) => handleChange(e, index, "last_name")}
+                      />
+                    </td>
+                    <td>
+                      <input
                         value={row.property_id}
                         onChange={(e) => handleChange(e, index, "property_id")}
                       />
@@ -108,6 +118,12 @@ const Viewtenant = () => {
                       <input
                         value={row.phone_no}
                         onChange={(e) => handleChange(e, index, "phone_no")}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        value={row.email}
+                        onChange={(e) => handleChange(e, index, "email")}
                       />
                     </td>
                     <td>
@@ -152,8 +168,10 @@ const Viewtenant = () => {
                 ) : (
                   <>
                     <td>{row.name}</td>
+                    <td>{row.last_name}</td>
                     <td>{row.property_id}</td>
                     <td>{row.phone_no}</td>
+                    <td>{row.email}</td>
                     <td>{row.HouseType}</td>
                     <td>{row.unit_type}</td>
                     <td>{row.date_in}</td>
