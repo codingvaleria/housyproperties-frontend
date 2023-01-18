@@ -16,7 +16,7 @@ function Banner({ data, setData }) {
         <Search data={data} setData={setData} />
       </div>
       <div className="feature-container">
-        <div className="feature-title">
+        <div className="feature-title" id="property_type">
           <h2>Featured Property Types</h2>
         </div>
         <div className="feature-elements">
@@ -24,7 +24,7 @@ function Banner({ data, setData }) {
           <img src={apartments} alt="apartments" />
           <img src={villa} alt="villa" />
         </div>
-        <div className="properties-element">
+        <div className="properties-element" id="properties">
           <h1>Our Properties</h1>
           <p
             onClick={() => {
