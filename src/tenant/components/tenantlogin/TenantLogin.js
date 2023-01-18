@@ -6,6 +6,7 @@ import logo from "../../../images/logo.png";
 import "./Tenantlogin.css";
 
 
+
 const TenantLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
