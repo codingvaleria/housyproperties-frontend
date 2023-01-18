@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 import "./Tenantlogin.css";
 
-const TenantLogin = ({ onLogin }) => {
+
+const TenantLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -13,11 +14,17 @@ const TenantLogin = ({ onLogin }) => {
   const navigate = useNavigate();
 
 
+  const onLogin = (user) => {
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetch("/login", {
+    // changed the API endpoint
+    fetch("https://housy-properties-production.up.railway.app/tenants/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,13 +37,14 @@ const TenantLogin = ({ onLogin }) => {
     .then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-        navigate(`/mydashboard`);
+        navigate("/mydashboard");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
       setIsLoading(false);
     });    
   };
+
 
 
   return (
@@ -80,7 +88,7 @@ const TenantLogin = ({ onLogin }) => {
               />
             </div>
 
-            {errors.length > 0 && (
+            {errors && errors.length > 0 && (
               <div className="input-control">
                 <div style={{ color: "red" }}>
                   {errors.map((error, index) => (
