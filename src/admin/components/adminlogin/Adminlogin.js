@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "./Adminlogin.css";
 import logo from "../../../images/logo.png";
 import { Link } from "react-router-dom";
-function Adminlogin({onLogin}) {
-  const [username, setUsername] = useState("");
+function Adminlogin() {
+  const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   // eslint-disable-next-line
@@ -18,11 +18,11 @@ function Adminlogin({onLogin}) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ Email: email, password: password }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) => console.log(user));
         navigate(`/admin`);
       } else {
         r.json().then((err) => setErrors(err.errors));
@@ -46,11 +46,11 @@ function Adminlogin({onLogin}) {
             <input
               className="form-c"
               type="text"
-              value={username}
-              placeholder="Username"
-              id="username"
-              name="username"
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              placeholder="Email"
+              id="email"
+              name="email"
+              onChange={(e) => setemail(e.target.value)}
             />
           </div>
           <div className="input-f">
@@ -65,7 +65,7 @@ function Adminlogin({onLogin}) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          {errors.length > 0 && (
+          {errors && errors.length > 0 && (
             <div className="input-control">
               <div style={{ color: "red" }}>
                 {errors.map((error, index) => (
