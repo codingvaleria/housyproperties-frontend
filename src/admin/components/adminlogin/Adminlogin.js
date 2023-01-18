@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Adminlogin.css";
 import logo from "../../../images/logo.png";
 import { Link } from "react-router-dom";
-function Adminlogin(onLogin) {
+function Adminlogin({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -18,12 +18,12 @@ function Adminlogin(onLogin) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: username, password: password }),
+      body: JSON.stringify({ username, password }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-        navigate(`/admin/viewtenants`);
+        navigate(`/admin`);
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -42,7 +42,7 @@ function Adminlogin(onLogin) {
             <h1>Admin Login</h1>
           </div>
           <div className="input-f">
-            <i class="l-icon fa fa-user" aria-hidden="true"></i>
+            <i className="l-icon fa fa-user" aria-hidden="true"></i>
             <input
               className="form-c"
               type="text"
@@ -95,8 +95,3 @@ function Adminlogin(onLogin) {
   );
 }
 export default Adminlogin;
-
-
-
-
-

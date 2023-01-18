@@ -36,7 +36,8 @@
   width: 100px;
   border-radius: 130px;
   top: 60px;
-  bottom: 60px;
+  bottom: 50px;
+  margin: 10px;
 }
 .l-title {
   color: #122947;
@@ -54,7 +55,7 @@
 }
 .input-f {
   position: relative;
-  margin: 25px;
+  margin: 10px;
   width: 250px;
 }
 .input-f .form-c {
@@ -68,11 +69,11 @@
   background-color: #122947;
   font-size: 30px;
   color: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
   outline: none;
   font-weight: bold;
   align-items: center;
   justify-content: center;
-  margin: 25px;
+  margin: 15px;
 }

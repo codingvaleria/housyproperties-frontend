@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./Adminsignup.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../images/logo.png";
-function Adminsignup({onLogin}) {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
+function Adminsignup({ onLogin }) {
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [errors, setErrors] = useState([]);
@@ -16,26 +16,31 @@ function Adminsignup({onLogin}) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("https://housy-properties-production.up.railway.app/admins", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
-        email: email,
-        password: password,
-        password_confirmation: passwordConfirmation
-      }),
-    }).then((r) => {
-      setIsLoading(false);
-      if (r.ok) {
-        r.json().then((user) => onLogin (user));
-        navigate(`/admin/login`);
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    });
+    if (password === passwordConfirmation) {
+      fetch("https://housy-properties-production.up.railway.app/admins", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Name,
+          Email,
+          Phone,
+          password,
+          passwordConfirmation,
+        }),
+      }).then((r) => {
+        setIsLoading(false);
+        if (r.ok) {
+          r.json().then((user) => onLogin(user));
+          navigate(`/admin/login`);
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });
+    } else {
+      setErrors({ passwordconfirmation: "passwords don't match" });
+    }
   }
   return (
     <div className="admin-signup-main-a">
@@ -43,7 +48,11 @@ function Adminsignup({onLogin}) {
         <form id="s-form" onSubmit={handleSubmit}>
           <div className="admin-signup-logo-a">
             <div className="admin-signup-logo-container">
-              <img src={logo} alt="logo" className="admin-signup-logo-img"></img>
+              <img
+                src={logo}
+                alt="logo"
+                className="admin-signup-logo-img"
+              ></img>
             </div>
           </div>
           <div className="title-aa">
@@ -53,12 +62,12 @@ function Adminsignup({onLogin}) {
             <i className="ico fa fa-user" aria-hidden="true"></i>
             <input
               type="text"
-              id="username"
-              name="username"
+              id="name"
+              name="name"
               placeholder="Name"
-              value={username}
+              value={Name}
               className="form-c"
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="input-e">
@@ -68,21 +77,21 @@ function Adminsignup({onLogin}) {
               id="email"
               name="email"
               placeholder="Email"
-              value={email}
+              value={Email}
               className="form-c"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="input-e">
-            <i className="ico fa fa-address-book" aria-hidden="true"></i>
+            <i className="ico fa fa-phone" aria-hidden="true"></i>
             <input
               type="text"
-              id="address"
-              name="address"
-              placeholder="Address"
-              value={address}
+              id="phone"
+              name="phone"
+              placeholder="Phone"
+              value={Phone}
               className="form-c"
-              onChange={(e) => setAddress(e.target.value)}
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="input-e">
