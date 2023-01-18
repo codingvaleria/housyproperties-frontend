@@ -13,7 +13,7 @@ const TenantLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Added onLogin function
+  // Added the onLogin function
   const onLogin = (user) => {
     localStorage.setItem("user", JSON.stringify(user));
   };
