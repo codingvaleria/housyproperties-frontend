@@ -13,7 +13,7 @@ const TenantLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-
+  // Added onLogin function
   const onLogin = (user) => {
     localStorage.setItem("user", JSON.stringify(user));
   };
@@ -37,7 +37,7 @@ const TenantLogin = () => {
     .then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-        navigate("/mydashboard");
+        navigate("/mydashboard"); 
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
