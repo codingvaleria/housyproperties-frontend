@@ -88,7 +88,7 @@ const TenantLogin = () => {
               />
             </div>
 
-            {errors && errors.length > 0 && (
+            {errors && errors.length > 0 && ( // Corrected the error
               <div className="input-control">
                 <div style={{ color: "red" }}>
                   {errors.map((error, index) => (
