@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdminNavBar from "../adminhome/AdminNavbar";
 function Complains() {
+  const[complains, setComplains]=useState([])
+  const [newData, setNewData] = useState(false);
+  useEffect(()=>{
+    fetch('https://housy-properties-production.up.railway.app/housecomplains')
+    .then((r)=>r.json())
+    .then((data)=>setComplains(data))
+  },[])
+
+  function handleDelete(id){
+    console.log(id)
+    fetch(`https://housy-properties-production.up.railway.app/housecomplains/${id}`,{
+      method: "DELETE",
+    })
+    .then(res=>res.json())
+    .then(()=>{
+      const remainingComplains=complains.filter((remaining)=>remaining.id!==id)
+      setComplains(remainingComplains)
+    })
+    handleNewData()
+  }
+  function handleNewData() {
+    setNewData((newData) => !newData);
+  }
   return (
     <div>
       <AdminNavBar />
@@ -9,146 +32,33 @@ function Complains() {
       </div>
       <table>
         <th>Name</th>
-        <th>House No</th>
         <th>Phone No</th>
+         <th>Email</th>
         <th>House Type</th>
-        <th>Unit Type</th>
-        <th>Location</th>
         <th>Complain</th>
+        <th>House No</th>
+        <th>Location</th>
+        <th>Unit Type</th>
         <th>Action</th>
-        <th>Status</th>
+       { complains.map((c)=>(
         <tr>
-          <td>James</td>
-          <td>12</td>
-          <td>254712345678</td>
-          <td>Apartment</td>
-          <td>2 bdrm</td>
-          <td>Rongai</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
-            similique quisquam molestias optio dicta esse? Voluptate magni
-            voluptatem iste excepturi.
-          </td>
-          <td className="delete">
-            <i class="fa fa-trash" aria-hidden="true"></i>
-          </td>
-          <td>
-            <select>
-              <option>Closed</option>
-              <option>In Progress</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>David</td>
-          <td>12</td>
-          <td>254712345678</td>
-          <td>Apartment</td>
-          <td>2 bdrm</td>
-          <td>Nairobi</td>
-          <td>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis non
-            aliquid aspernatur consequatur voluptates aut doloremque eum
-            deleniti hic totam?
-          </td>
-          <td className="delete">
-            <i className="fa fa-trash" aria-hidden="true"></i>
-          </td>
-          <td>
-            <select>
-              <option>Closed</option>
-              <option>In Progress</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Michael</td>
-          <td>12</td>
-          <td>254712345678</td>
-          <td>Villa</td>
-          <td>3 bdrm</td>
-          <td>Nairobi</td>
-          <td>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam ad
-            asperiores, reprehenderit commodi dolorem molestias omnis expedita
-            libero repellendus quia suscipit voluptatum nihil, quos enim
-            doloremque maiores quo, at dolore.
-          </td>
-          <td className="delete">
-            <i className="fa fa-trash" aria-hidden="true"></i>
-          </td>
-          <td>
-            <select>
-              <option>Closed</option>
-              <option>In Progress</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Duncan</td>
-          <td>2</td>
-          <td>254712345678</td>
-          <td>Family House</td>
-          <td>1 bdrm</td>
-          <td>Nairobi</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            blanditiis architecto error omnis. Deleniti omnis iste culpa sunt
-            odio reiciendis.
-          </td>
-          <td className="delete">
-            <i className="fa fa-trash" aria-hidden="true"></i>
-          </td>
-          <td>
-            <select>
-              <option>Closed</option>
-              <option>In Progress</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Joseph</td>
-          <td>12</td>
-          <td>254712345678</td>
-          <td>Apartment</td>
-          <td>3 bdrm</td>
-          <td>Ruiru</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            error natus debitis enim praesentium dolore sint vel ducimus
-            expedita minima?
-          </td>
-          <td className="delete">
-            <i className="fa fa-trash" aria-hidden="true"></i>
-          </td>
-          <td>
-            <select>
-              <option>Closed</option>
-              <option>In Progress</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Michael</td>
-          <td>12</td>
-          <td>254712345678</td>
-          <td>Apartment</td>
-          <td>2 bdrm</td>
-          <td>Nairobi</td>
-          <td>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus,
-            asperiores.
-          </td>
-          <td className="delete">
-            <i className="fa fa-trash" aria-hidden="true"></i>
-          </td>
-          <td>
-            <select>
-              <option>Closed</option>
-              <option>In Progress</option>
-            </select>
-          </td>
-        </tr>
+        <td>{c.Name}</td>
+        <td>{c.PhoneNo}</td>
+        <td>{c.Email}</td>
+        <td>{c.HouseType}</td>
+        <td>{c.complain}</td>
+        <td>{c.HouseNo}</td>
+        <td>{c.location}</td>
+        <td>{c.UnitType}</td>
+     
+       
+       
+         <td className="delete">
+          <i onClick={handleDelete} class="fa fa-trash" aria-hidden="true"></i>
+        </td>
+      </tr>
+       ))}
+  
       </table>
     </div>
   );
