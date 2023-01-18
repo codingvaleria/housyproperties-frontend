@@ -37,7 +37,7 @@ const TenantLogin = () => {
     .then((r) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-        navigate("/mydashboard"); 
+        navigate("/mydashboard"); // Corrected the path
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
