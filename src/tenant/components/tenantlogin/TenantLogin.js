@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../images/logo.png";
 import "./Tenantlogin.css";
 
-
-
+// Added the onLogin function
 const TenantLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
