@@ -13,7 +13,7 @@ function Adminlogin() {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("https://housy-properties-production.up.railway.app/admins", {
+    fetch("https://housy-properties-production.up.railway.app/admin/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
