@@ -55,3 +55,15 @@
 ::placeholder {
   color: #c8cacd;
 }
+
+.search-inner button {
+  height: 100%;
+  width: 20%;
+  border: none;
+  background-color: white;
+}
+
+.search-inner button:hover {
+  background-color: whitesmoke;
+  border: none;
+}

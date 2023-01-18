@@ -1,13 +1,13 @@
 import React from "react";
-// import data from "./data";
 import { useState, useEffect } from "react";
 import "./Card.css";
 import Card from "./Card";
 
-function Housecards() {
-  let [data, setData] = useState([]);
+function Housecards({ data }) {
+  let [property, setProperty] = useState([]);
   let [isLoading, setIsLoading] = useState(false);
 
+  console.log(data);
   useEffect(() => {
     let fetchData = async () => {
       setIsLoading(true);
@@ -16,7 +16,7 @@ function Housecards() {
           "https://housy-properties-production.up.railway.app/properties"
         );
         let data = await response.json();
-        setData(data);
+        setProperty(data);
       } catch (error) {
         console.error(error);
       } finally {
@@ -28,11 +28,11 @@ function Housecards() {
 
   if (isLoading) {
     <div className="houses">
-      <p>Loading ....</p>
+      <p>Loading ...</p>
     </div>;
   }
 
-  if (!data) {
+  if (!property) {
     return (
       <div className="houses">
         <p>No data</p>
@@ -72,7 +72,7 @@ function Housecards() {
     }
   }
 
-  let properties = data.map((e) => {
+  let properties = property.map((e) => {
     return (
       <Card
         key={e.id}
@@ -92,7 +92,28 @@ function Housecards() {
 
   return (
     <div className="houses">
-      <div className="cards-container">{properties}</div>
+      <div className="cards-container">
+        {data
+          ? data &&
+            data.map((e) => {
+              return (
+                <Card
+                  key={e.id}
+                  propertyName={e.propertyName}
+                  property_type={e.property_type}
+                  unit_type={e.unit_type}
+                  location={e.location}
+                  image={e.image}
+                  wifi={handleWifi(e.wifi)}
+                  shower={handleShower(e.shower)}
+                  balcony={handleBalcony(e.balcony)}
+                  parking={handleParking(e.parking)}
+                  amount={e.amount}
+                />
+              );
+            })
+          : properties}
+      </div>
     </div>
   );
 }
