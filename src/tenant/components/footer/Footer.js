@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 function Footer() {
   const nav = useNavigate();
   return (
-    <div class="footer-section">
-      <div class="footer-container">
-        <div class="row">
-          <div class="footer-col">
+    <div className="footer-section">
+      <div className="footer-container">
+        <div className="row">
+          <div className="footer-col">
             <h4>Contact Us</h4>
             <ul>
               <li> Call +254123456</li>
@@ -17,7 +17,7 @@ function Footer() {
               <li> Facebook:rentwithus</li>
             </ul>
           </div>
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>Features</h4>
             <ul>
               <a href="">
@@ -64,7 +64,7 @@ function Footer() {
               </a>
             </ul>
           </div>
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>Company</h4>
             <ul>
               <a href="">

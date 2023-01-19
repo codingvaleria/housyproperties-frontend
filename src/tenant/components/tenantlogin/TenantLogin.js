@@ -63,7 +63,7 @@ const TenantLogin = () => {
             {/* FORM INPUTS */}
             <div className="inputs">
               {/* EMAIL */}
-              <i class="bx bxs-envelope" id="icon-email"></i>
+              <i className="bx bxs-envelope" id="icon-email"></i>
               <input
                 type="text"
                 id="i-email"
@@ -76,7 +76,7 @@ const TenantLogin = () => {
             </div>
             {/* PASSWORD */}
             <div className="inputs">
-              <i class="bx bxs-lock" id="icon-password"></i>
+              <i className="bx bxs-lock" id="icon-password"></i>
               <input
                 type="password"
                 id="i-password"
