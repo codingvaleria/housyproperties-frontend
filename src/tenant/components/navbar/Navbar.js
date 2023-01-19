@@ -33,7 +33,6 @@ function Navbar() {
       <div className={showNavbar ? "nav-items" : "nav-items hidden"}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact-us">Contact us</NavLink>
         <NavLink to="/signin">Sign in</NavLink>
       </div>
     </div>
