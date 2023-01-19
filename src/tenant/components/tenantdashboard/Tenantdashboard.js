@@ -74,7 +74,7 @@ function Tenantdashboard() {
         <div className="right-container">
           <div className="right-items" id="profile">
             <p className="TenantName">
-              <h3> {tenant.tenant.name} {tenant.tenant.name}</h3> 
+              <h3> {tenant.tenant.name} {tenant.tenant.last_name}</h3> 
               <i> {tenant.tenant.email} </i>
             </p>
             <h3 className="houseType">
